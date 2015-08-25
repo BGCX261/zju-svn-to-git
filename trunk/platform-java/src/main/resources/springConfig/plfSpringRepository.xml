@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<bean id="businessLogRepository"
+		class="com.jsict.platform.repository.bean.BusinessLogRepository">
+		<property name="businessLogDao" ref="businessLogDao"></property>
+		<property name="businessLogDetailDao"
+			ref="businessLogDetailDao">
+		</property>
+	</bean>
+
+	<bean id="companyRepository"
+		class="com.jsict.platform.repository.bean.CompanyRepository">
+		<property name="companyDao" ref="companyDao"></property>
+	</bean>
+	<bean id="permissionRepository"
+		class="com.jsict.platform.repository.bean.PermissionRepository">
+		<property name="permissionDao" ref="permissionDao"></property>
+	</bean>
+	<bean id="roleRepository"
+		class="com.jsict.platform.repository.bean.RoleRepository">
+		<property name="roleDao" ref="roleDao"></property>
+		<property name="rolePermissionDao" ref="rolePermissionDao"></property>
+		<property name="userRoleDao" ref="userRoleDao"></property>
+		<property name="assignableRoleDao" ref="assignableRoleDao"></property>
+		<property name="userAccountDao" ref="userAccountDao"></property>
+	</bean>
+	<bean id="userAccountRepository"
+		class="com.jsict.platform.repository.bean.UserAccountRepository">
+		<property name="userAccountDao" ref="userAccountDao"></property>
+		<property name="userRoleDao" ref="userRoleDao"></property>
+	</bean>
+	<bean id="userProfileRepository"
+		class="com.jsict.platform.repository.bean.UserProfileRepository">
+		<property name="userProfileDao" ref="userProfileDao"></property>
+	</bean>
+	<bean id="messagesRepository"
+		class="com.jsict.platform.repository.bean.MessagesRepository">
+		<property name="messagesDao" ref="messagesDao"></property>
+	</bean>
+	<bean id="subsystemRepository" class="com.jsict.platform.repository.bean.SubsystemRepository">
+		<property name="subsystemDao" ref="subsystemDao"></property>
+	</bean>
+	<bean id="assignableRoleRepository" class="com.jsict.platform.repository.bean.AssignableRoleRepository">
+		<property name="assignableRoleDao" ref="assignableRoleDao"></property>
+		<property name="roleDao"  ref="roleDao"></property>
+		<property name="userAccountDao" ref="userAccountDao"></property>
+	</bean>
+</beans>

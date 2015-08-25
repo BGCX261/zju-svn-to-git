@@ -1,0 +1,17 @@
+@CHARSET "UTF-8";
+.body{
+font-family: 宋体;
+font-size:12px;
+line-height:1.5em;
+color:#333;
+}
+
+.title{
+	width: 20%;
+	float: left;
+	text-align: right;
+}
+
+.value{
+		text-align:left;	
+		}

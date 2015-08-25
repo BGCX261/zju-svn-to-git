@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compass-core-config xmlns="http://www.compass-project.org/schema/core-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.compass-project.org/schema/core-config
+           http://www.compass-project.org/schema/compass-core-config-2.2.xsd">
+
+	<compass name="default">
+		<!-- 索引目录一定要配置, 这项设置在程序中覆盖了, (改到了发布目录) -->
+		<connection>
+			<file path="c:/luceneIndex" />
+		</connection>
+
+		<searchEngine>
+			<analyzer name="default" type="Cjk"></analyzer>
+		</searchEngine>
+
+		<settings>
+			<setting name="compass.engine.highlighter.default.formatter.simple.pre"
+				value="&lt;font color=&quot;red&quot; &gt;"></setting>
+			<setting name="compass.engine.highlighter.default.formatter.simple.post" value="&lt;/font&gt;"></setting>
+		</settings>
+
+	</compass>
+</compass-core-config>

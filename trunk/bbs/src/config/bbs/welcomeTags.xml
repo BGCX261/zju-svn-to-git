@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 约束 -->
+<!DOCTYPE welcome-tags-config [
+<!ELEMENT welcome-tag (attr)*>
+<!ATTLIST welcome-tag name ID #REQUIRED>
+<!ELEMENT attr (#PCDATA)>
+]>
+
+<welcome-tags-config>
+	<welcome-tag name="b"></welcome-tag>
+	<welcome-tag name="u"></welcome-tag>
+	<welcome-tag name="i"></welcome-tag>
+
+	<welcome-tag name="font">
+		<attr>size</attr>
+		<attr>color</attr>
+	</welcome-tag>
+</welcome-tags-config>

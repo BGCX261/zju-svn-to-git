@@ -1,0 +1,59 @@
+<%@ page language="java" pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="html" uri="http://struts.apache.org/tags-html"%>
+
+<div id="webHeader">
+	<div class="head">
+		<div class="pic1">江苏省浙江大学校友会论坛</div>
+		<div class="search"><div class="content">
+			<html:form action="/search" method="get" onsubmit="if(search_keywords.value == '请输入关键字') return false;">
+				<input type="hidden" name="method" value="search">
+				<input type="hidden" name="forumIds" value="${forum.id }">
+
+				<input type="text" id="search_keywords" name="keywords"
+					onblur="if (this.value == '') this.value = '请输入关键字';"
+					onclick="if (this.value == '请输入关键字') this.value = '';" 
+					value="请输入关键字" class="input1"/>
+
+				<html:image page="/images/button_search.gif" align="absmiddle"/>
+			</html:form>
+		</div></div>
+	</div>
+
+	<%-- 菜单和正在访问的位置 --%>
+	<div class="menu"><div class="content" style="float: left;">
+		<!-- 未登陆的菜单 -->
+		<c:if test="${sessionScope['SESSION_KEY_CURRENTLY_LOGGED_ON_USER'] eq null }">
+			<html:link action="/user?method=registerUI">注册</html:link> | 
+			<html:link action="/user?method=loginUI">登陆</html:link> | 
+		</c:if>
+
+		<!-- 已登陆的菜单 -->
+		<c:if test="${sessionScope['SESSION_KEY_CURRENTLY_LOGGED_ON_USER'] ne null }">
+			<html:link action="/user?method=logout">注销
+				[${sessionScope['SESSION_KEY_CURRENTLY_LOGGED_ON_USER'].nickname }][${sessionScope['SESSION_KEY_CURRENTLY_LOGGED_ON_USER'].memberid }]
+			</html:link> | 
+			<html:link action="/user?method=editUI&id=${sessionScope['SESSION_KEY_CURRENTLY_LOGGED_ON_USER'].id }">
+				个人资料
+			</html:link> | 
+			<c:if test="${sessionScope['SESSION_KEY_CURRENTLY_LOGGED_ON_USER'].loginName  eq 'superman'}">
+			<html:link action="/admin">后台管理</html:link> | 
+			</c:if>
+		</c:if>
+
+		<html:link action="/search?method=form">搜索文章</html:link> |
+		<html:link action="/index">首页</html:link> | 您当前的位置: ${settings.name } &gt;
+		<html:link action="/index">首页</html:link>
+		<c:if test="${forum ne null}">
+			&gt; <html:link action="/forum?method=show&id=${forum.id }&pageNum=1">${forum.name }</html:link>
+		</c:if>
+		<c:if test="${topic ne null}">
+			&gt; <html:link action="/forum?method=show&id=${topic.forum.id }&pageNum=1">${topic.forum.name }</html:link>
+			&gt; <html:link action="/article?method=showTopic&id=${topic.id }&pageNum=${param.page }">${topic.title }</html:link>
+		</c:if>
+	</div></div>
+</div>
+
+<!-- 显示错误(如果有) -->
+<%@include file="/WEB-INF/pages/public/showErrors.jspf"%>
+<div style="margin: 8px"></div>

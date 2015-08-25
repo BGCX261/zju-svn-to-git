@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<!-- The xtree script file -->
+		<script src="xtree.js"></script>
+		<!-- Modify this file to change the way the tree looks -->
+		<link type="text/css" rel="stylesheet" href="xtree.css">		
+	</head>
+	<body>
+		<script type="text/javascript">
+			var tree = new WebFXTree('Root');
+var item1000 = tree.add(new WebFXTreeItem('传智播客'));
+var item2 = item1000.add(new WebFXTreeItem('开发部'));
+var item22 = item2.add(new WebFXTreeItem('开发2部'));
+var item21 = item2.add(new WebFXTreeItem('开发1部'));
+var item1 = item1000.add(new WebFXTreeItem('市场部'));
+var item12 = item1.add(new WebFXTreeItem('市场2部'));
+var item11 = item1.add(new WebFXTreeItem('市场1部'));
+			document.write(tree);
+		</script>
+	</body>
+</html>

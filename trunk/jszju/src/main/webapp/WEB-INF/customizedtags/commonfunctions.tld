@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.0" xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee web-jsptaglibrary_2_0.xsd">
+	<tlib-version>1.2</tlib-version>
+	<short-name />
+	<uri>/WEB-INF/commonfunctions.tld</uri>
+	<function>
+		<name>getValueByKey</name>
+		<function-class>
+			com.jsict.base.util.codebook.CodeBookHelper
+		</function-class>
+		<function-signature>
+			java.lang.String getValueByKey(java.lang.String)
+		</function-signature>
+	</function>
+	<function>
+		<description>
+			get variable value in CodeKey interface by its name
+		</description>
+		<name>getKeyValue</name>
+		<function-class>
+			com.jsict.base.util.CodeKeyHelper
+		</function-class>
+		<function-signature>
+			java.lang.String getKeyValue(java.lang.String)
+		</function-signature>
+	</function>
+	<function>
+		<name>hasPermission</name>
+		<function-class>
+			com.jsict.platform.util.SecurityUtils
+		</function-class>
+		<function-signature>
+			boolean hasPermissionByVarName(java.lang.String)
+		</function-signature>
+	</function>
+</taglib>

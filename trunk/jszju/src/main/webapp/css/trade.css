@@ -1,0 +1,72 @@
+@CHARSET "UTF-8";
+
+.title {
+	font-weight: bold;
+	font-size: 14pt;
+}
+
+#info {
+	width: 100%;
+}
+
+.row {
+	width: 100%;
+	margin-top: 5px;
+}
+
+.row span {
+	display: inline-block;
+}
+
+.caption {
+	text-align: right;
+	width: 10%;
+}
+
+.value {
+	width: 89%;
+}
+
+#bid {
+	border-width: 1px;
+	border-style: solid;
+	border-color: gainsboro black black gainsboro;
+	position: absolute;
+	padding: 2px;
+	background-color: white;
+}
+#comment{
+	border-width: 1px;
+	border-style: solid;
+	border-color: gainsboro black black gainsboro;
+	position: absolute;
+	padding: 2px;
+	background-color: white;	
+}
+#btndiv {
+	margin-top: 20px;
+	text-align: center;
+}
+
+.inputspan {
+	margin-left: 5px;
+}
+
+.inputspan input {
+	width: 80px;
+}
+
+.bidtitle {
+	font-weight: bold;
+	position: relative;
+}
+
+.rightbtn {
+	position: absolute;
+	right: 0;
+}
+
+.action {
+	padding-left: 50px;
+	text-aligh: left;
+}

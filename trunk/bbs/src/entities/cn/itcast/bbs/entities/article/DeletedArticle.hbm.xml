@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.itcast.bbs.entities.article">
+	<class name="DeletedArticle" table="itcast_deletedArticle">
+		<id name="id" column="id_">
+			<generator class="native" />
+		</id>
+
+		<property name="title" column="title_" length="255" />
+		<property name="content" column="content_" type="text" length="65535" />
+		<property name="editCount" column="editCount_" />
+		<property name="lastEditTime" column="lastEditTime_" type="timestamp" />
+
+		<property name="type" column="type_" />
+		<property name="status" column="status_" />
+		<many-to-one name="author" column="authorId_" lazy="false" />
+		<property name="postTime" column="postTime_" type="timestamp" />
+		<property name="ipAddr" column="ipAddr_" length="16" />
+		<property name="viewCount" column="viewCount_" />
+		<property name="replyCount" column="replyCount_" />
+
+		<property name="articleId" column="articleId_" />
+		<property name="attachmentsIdStr" column="attachmentsIdStr_" />
+		<property name="votesIdStr" column="votesIdStr_" />
+		<property name="forumName" column="forumName_" />
+
+		<property name="deletedTime" column="deletedTime_" type="timestamp"/>
+		<many-to-one name="deleter" column="deleterId_" lazy="false" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"	
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+	
+	
+	
+	<!-- ================== GJ Begin ==================== -->
+	
+	<!-- =============Actions Added by Liu GuanQun Begin=========== -->
+	<!-- 用户 -->
+	<bean name="/UserAccountList"
+		class="com.jsict.platform.action.UserAccountListAction">
+		<property name="userService" ref="userService"></property>
+		<property name="companyService" ref="companyService"></property>
+		<property name="authorizationService" ref="authorizationService"></property>
+		<property name="userAccountDomain" ref="userAccountDomain"></property>
+	</bean>
+	<bean id="userAccountDomain" class="com.jsict.platform.domain.UserAccountDomain" />
+	<bean name="/UserAccountDetail"
+		class="com.jsict.platform.action.UserAccountAddEditAction">
+		<property name="userService" ref="userService"></property>
+		<property name="companyService" ref="companyService"></property>
+		<property name="authorizationService" ref="authorizationService"></property>
+	</bean>
+	<bean name="/UserAccountView"
+		class="com.jsict.platform.action.UserAccountViewAction">
+		<property name="userService" ref="userService"></property>
+		<property name="companyService" ref="companyService"></property>
+		<property name="passwordGenerator" ref="passwordGenerator"></property>
+	</bean>
+
+	<!-- 角色 -->
+	<bean name="/RoleList"
+		class="com.jsict.platform.action.RoleListAction">
+		<property name="userService" ref="userService"></property>
+		<property name="authorizationService"
+			ref="authorizationService">
+		</property>
+	</bean>
+	<bean name="/RoleDetail"
+		class="com.jsict.platform.action.RoleAddEditAction">
+		<property name="userService" ref="userService"></property>
+		<property name="authorizationService"
+			ref="authorizationService">
+		</property>
+	</bean>
+	<bean name="/RoleView"
+		class="com.jsict.platform.action.RoleViewAction">
+		<property name="userService" ref="userService"></property>
+		<property name="authorizationService"
+			ref="authorizationService">
+		</property>
+	</bean>
+
+	<!-- 公司 -->
+	<bean name="/CompanyList"
+		class="com.jsict.platform.action.CompanyListAction">
+		<property name="companyService" ref="companyService"></property>
+	</bean>
+	<bean name="/CompanyDetail"
+		class="com.jsict.platform.action.CompanyAddEditAction">
+		<property name="companyService" ref="companyService"></property>
+	</bean>
+	<bean name="/CompanyView"
+		class="com.jsict.platform.action.CompanyViewAction">
+		<property name="companyService" ref="companyService"></property>
+	</bean>
+
+	<bean name="/RoleAssignToUser"
+		class="com.jsict.platform.action.RoleAssignToUserAction">
+		<property name="authorizationService" ref="authorizationService"></property>
+		<property name="userService" ref="userService"></property>
+	</bean>
+
+	<bean name="/PlatformPermissionsDetail" class="com.jsict.platform.action.PlatformPermissionsAddEditAction">
+	<property name="authorizationService" ref="authorizationService"></property>
+	<property name="userService" ref="userService"></property>
+	</bean>
+
+	<bean name="/PermissionsAssignToRole" class="com.jsict.platform.action.PermissionsAssignToRoleAction">
+	<property name="authorizationService" ref="authorizationService"></property>
+	<property name="userService" ref="userService"></property>
+	</bean>
+	
+<!--	日志-->
+	<bean name="/BusinessLogList" class="com.jsict.platform.action.BusinessLogListAction">
+	<property name="businessLogService" ref="businessLogService"></property>
+	</bean>
+	
+	<!-- 消息 -->
+	<bean name="/IncomingMessagesList" class="com.jsict.platform.action.IncomingMessagesListAction">
+	<property name="messagesService" ref="messagesService"></property>
+	<property name="userService" ref="userService"></property>
+	</bean>
+	
+	<bean name="/OutgoingMessagesList" class="com.jsict.platform.action.OutgoingMessagesList">
+	<property name="messagesService" ref="messagesService"></property>
+	</bean>
+	
+	<bean name="/AddressList" class="com.jsict.platform.action.AddressListAction">
+	<property name="userService" ref="userService"></property>
+	</bean>
+		
+		
+	<bean name="/CodeBook"
+		class="com.jsict.platform.action.CodeBookAction">
+	</bean>
+	
+	<bean name="/ChangePWD" class="com.jsict.platform.action.ChangePwdAction">
+		<property name="userService" ref="userService"></property>
+	</bean>
+
+	<!-- =============Actions Added by Liu GuanQun End=========== -->
+
+
+</beans>

@@ -1,0 +1,14 @@
+<%@ page language="java" pageEncoding="utf-8" %>
+<script type="text/javascript" src="${baseUrl }/script/jplugins/jqModal/jqModal.js"></script>
+<link rel="stylesheet" type="text/css" href="${baseUrl }/script/jplugins/jqModal/jqModal.css">
+
+<div class="jqmWindow" id="jqmDiv">
+	正在加载...
+	<img src="${pageContext.request.contextPath }/img/busy.gif" alt="loading ..." />
+</div>
+
+<script type="text/javascript">
+<!--
+	$("#jqmDiv").jqm({ ajax:"@name", trigger: ".openModal" });
+//-->
+</script>

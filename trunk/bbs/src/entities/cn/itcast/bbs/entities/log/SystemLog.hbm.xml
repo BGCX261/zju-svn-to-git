@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.itcast.bbs.entities.log">
+	<class name="SystemLog" table="itcast_systemLog">
+		<id name="id" column="id_">
+			<generator class="native" />
+		</id>
+
+		<property name="logTime" column="logTime_" type="timestamp" />
+		<property name="comment" column="comment_" type="text" length="65535" />
+		<property name="operIpAddr" column="operIpAddr_" length="16" />
+		<many-to-one name="operator" column="operator_" lazy="false"/>
+
+		<joined-subclass name="OperationLog" table="itcast_operationLog">
+			<key column="operationLogId_"></key>
+			<property name="entityType" column="entityType_" />
+			<property name="entityId" column="entityId_" />
+			<property name="type" column="typeName_" type="operationLogEnumType"/>
+		</joined-subclass>
+
+		<joined-subclass name="ExceptionLog" table="itcast_exceptionLog">
+			<key column="exceptionLogId_"></key>
+			<property name="className" column="className_" />
+			<property name="summary" column="summary_" length="1024" />
+			<property name="detailMessage" column="detailMessage_" type="text" length="65535" />
+		</joined-subclass>
+
+	</class>
+</hibernate-mapping>

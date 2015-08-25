@@ -1,0 +1,74 @@
+#webHeader {
+	background: url( ./images/header_bg.jpg ) repeat-x 50% top;
+	width: 100%;
+	height: 120px
+}
+
+#webHeader .head {
+	WIDTH: 1003px;
+	HEIGHT: 92px
+}
+
+#webHeader .head .pic1 {
+	padding-left: 25px;
+	font-size: 28px;
+	background: url( ./images/header_pic_1.jpg ) no-repeat;
+	float: left;
+	width: 206px;
+	color: #0196c8;
+	padding-top: 30px;
+	height: 92px;
+	color: #0196c8;
+	font-size: 23px;
+}
+
+#webHeader .head .search {
+	background: url( ./images/header_pic_2.jpg ) no-repeat;
+	float: left;
+	width: 614px;
+	color: #595a5c;
+	height: 92px;
+}
+
+#webHeader .head .search .content {
+	margin-top: 40px;
+	margin-right: 0px;
+	padding-right: 20px;
+	float: right;
+	width: 314px;
+	line-height: 26px;
+	text-align: right;
+}
+
+#webHeader .head .search .content .input1 {
+	width: 220px;
+	color: #5895D3;
+}
+
+#webHeader .menu {
+	margin-top: 1px;
+	background: url( ./images/header_menu_bg.gif ) repeat-x;
+	width: 100%;
+	height: 27px;
+
+	padding-left: 25px;
+	line-height: 27px;
+}
+
+#webHeader .menu a {
+	color: #0052a6;
+}
+
+#webFooter {
+	clear: both;
+	margin: 15px auto;
+	font: Verdana, "宋体", arial;
+	width: auto;
+	color: #8d8d8d;
+	padding-top: 5px;
+	text-align: center
+}
+
+#webFooter a {
+	color: #8d8d8d;
+}

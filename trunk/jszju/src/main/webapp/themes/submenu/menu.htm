@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>subMenu - jQuery动态导航菜单</title>
+<link rel="stylesheet" type="text/css" href="css/subMenu.css" />
+<script type="text/javascript" src="js/jquery-1.2.2.js"></script>
+<script type="text/javascript" src="js/jquery.submenu.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript">
+var Mysubmenu=null;
+$(function(){
+	Mysubmenu=$("#my_menu").submenu({oneSmOnly:false,speed:500,expandNum:5,savestatus:true});	
+})
+</script>
+</head>
+
+<body>
+	<table>
+	<tr>
+		<td style="height: 30px">展开菜单形式：
+</td>
+		<td style="height: 30px"><select name="oneSmOnly" id="oneSmOnly" onchange="Mysubmenu.oneSmOnly = this.value=='true'?true:false;">
+	<option selected="selected" value="true">单个</option>
+	<option value="false">多个</option>
+	</select></td>
+		<td style="height: 30px">默认展开项</td>
+		<td style="height: 30px">
+		<input name="Text1" type="text" onchange="Mysubmenu.expandNum=parseInt(this.value)" value="1" style="width: 41px" />&nbsp;</td>
+		<td style="height: 30px">速度：</td>
+		<td style="height: 30px">
+		<input name="speed" onchange="Mysubmenu.speed=parseInt(this.value)" id="speed" type="text" value="300" style="width: 41px; height: 22px" /></td>
+		<td style="height: 30px">是否保持菜单状态</td>
+		<td style="height: 30px"><select name="savestatus" id="savestatus" onchange="Mysubmenu.savestatus = this.value">
+	<option selected="selected" value="true">是</option>
+	<option value="false">否</option>
+	</select></td>
+		<td style="height: 30px">
+		<input name="Button1" type="button" value="全部展开" onclick="Mysubmenu.expandAll()" /></td>
+		<td style="height: 30px">
+		<input name="Button2" type="button" value="全部收起" onclick="Mysubmenu.collapseAll()" /></td>
+	</tr>
+</table>
+
+<table style="width: 100%">
+	<tr>
+		<td valign="top" style="width: 290px">
+
+<div style="float: left" id="my_menu">
+      <div>
+        <span>Online Tools</span>
+	        <a href="http://tools.dynamicdrive.com/imageoptimizer/">Image Optimizer</a>
+	        <a href="http://tools.dynamicdrive.com/favicon/">FavIcon Generator</a>
+	        <a href="http://www.dynamicdrive.com/emailriddler/">Email Riddler</a>
+	        <a href="http://tools.dynamicdrive.com/password/">htaccess Password</a>
+	        <a href="http://tools.dynamicdrive.com/gradient/">Gradient Image</a>
+	        <a href="http://tools.dynamicdrive.com/button/">Button Maker</a>
+      </div>
+      <div>
+        <span>Support Us</span>
+			<a href="http://www.dynamicdrive.com/recommendit/">Recommend Us</a>
+	        <a href="http://www.dynamicdrive.com/link.htm">Link to Us</a>
+	        <a href="http://www.dynamicdrive.com/resources/">Web Resources</a>
+      </div>
+      <div>
+        <span>JavaScript KitT</span>
+      </div>
+      <div>
+        <span>Test Current</span>
+			<a href="?foo=bar">Current or not</a>
+	        <a href="./">Current or not</a>
+	        <a href="index.html">Current or not</a>
+	        <a href="index.html?query">Current or not</a>
+      </div>
+      <div>
+        <span>Online Tools</span>
+	        <a href="http://tools.dynamicdrive.com/imageoptimizer/">Image Optimizer</a>
+	        <a href="http://tools.dynamicdrive.com/favicon/">FavIcon Generator</a>
+	        <a href="http://www.dynamicdrive.com/emailriddler/">Email Riddler</a>
+	        <a href="http://tools.dynamicdrive.com/password/">htaccess Password</a>
+	        <a href="http://tools.dynamicdrive.com/gradient/">Gradient Image</a>
+	        <a href="http://tools.dynamicdrive.com/button/">Button Maker</a>
+      </div>
+      <div>
+        <span>Support Us</span>
+			<a href="http://www.dynamicdrive.com/recommendit/">Recommend Us</a>
+	        <a href="http://www.dynamicdrive.com/link.htm">Link to Us</a>
+	        <a href="http://www.dynamicdrive.com/resources/">Web Resources</a>
+      </div>
+      <div>
+        <span>Partners</span>
+			<a href="http://www.javascriptkit.com">JavaScript Kit</a>
+	        <a href="http://www.cssdrive.com">CSS Drive</a>
+	        <a href="http://www.codingforums.com">CodingForums</a>
+	        <a href="http://www.dynamicdrive.com/style/">CSS Examples</a>
+      </div>
+      <div>
+        <span>Test Current</span>
+			<a href="?foo=bar">Current or not</a>
+	        <a href="./">Current or not</a>
+	        <a href="index.html">Current or not</a>
+	        <a href="index.html?query">Current or not</a>
+      </div>
+      
+      <div>
+        <span>Online Tools</span>
+	        <a href="http://tools.dynamicdrive.com/imageoptimizer/">Image Optimizer</a>
+	        <a href="http://tools.dynamicdrive.com/favicon/">FavIcon Generator</a>
+	        <a href="http://www.dynamicdrive.com/emailriddler/">Email Riddler</a>
+	        <a href="http://tools.dynamicdrive.com/password/">htaccess Password</a>
+	        <a href="http://tools.dynamicdrive.com/gradient/">Gradient Image</a>
+	        <a href="http://tools.dynamicdrive.com/button/">Button Maker</a>
+      </div>
+      <div>
+        <span>Support Us</span>
+			<a href="http://www.dynamicdrive.com/recommendit/">Recommend Us</a>
+	        <a href="http://www.dynamicdrive.com/link.htm">Link to Us</a>
+	        <a href="http://www.dynamicdrive.com/resources/">Web Resources</a>
+      </div>
+      <div>
+        <span>Partners</span>
+			<a href="http://www.javascriptkit.com">JavaScript Kit</a>
+	        <a href="http://www.cssdrive.com">CSS Drive</a>
+	        <a href="http://www.codingforums.com">CodingForums</a>
+	        <a href="http://www.dynamicdrive.com/style/">CSS Examples</a>
+      </div>
+      <div>
+        <span>Test Current</span>
+			<a href="?foo=bar">Current or not</a>
+	        <a href="./">Current or not</a>
+	        <a href="index.html">Current or not</a>
+	        <a href="index.html?query">Current or not</a>
+      </div>
+      
+   
+</div>
+		</td>
+		<td valign="top"><strong>本插件基于jQuery框架<br />
+		<br />
+		调用：</strong><br />
+		$(&quot;#my_menu&quot;).submenu();<br />
+		<br />
+		<strong>参数设置：</strong><br />
+		oneSmOnly //单独拉开收起，如果是true的话，当前菜单只有一个展开项<br />
+		speed&nbsp; //数字越大，速度越慢,默认为300<br />
+		expandNum&nbsp; //设置初始化时菜单展开的项，默认为第一项<br />
+		savestatus //设置是否保存菜单展开状态，默认为保存<br />
+		<br />
+		<strong>参数调用示例：<br />
+		</strong><br />
+		$(&quot;#my_menu&quot;).submenu({oneSmOnly:true,speed:500,expandNum:5,savestatus:true});<br />
+		<br />
+		<br />
+		本菜单效果修改自：Slashdot&#39;s Menu <br />
+		<a target="_blank" href="http://www.dynamicdrive.com/dynamicindex1/slashdot.htm">
+		http://www.dynamicdrive.com/dynamicindex1/slashdot.htm</a><br />
+		<br />
+		---------------------------------<br />
+		(没剑 2008-1-17)<br />
+		有什么意见请留言给我吧，大家一起进步~<br />
+		<a href="http://regedit.cnblogs.com">http://regedit.cnblogs.com</a><br />
+		<br />
+		<br />
+		</td>
+	</tr>
+	<tr>
+		<td valign="top" style="width: 290px">
+
+&nbsp;</td>
+		<td valign="top">&nbsp;</td>
+	</tr>
+</table>
+</body>
+
+</html>

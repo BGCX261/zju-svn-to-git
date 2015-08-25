@@ -1,0 +1,28 @@
+<%@ page language="java" pageEncoding="utf-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="html" uri="http://struts.apache.org/tags-html"%>
+<script type="text/javascript" src="${baseUrl }/script/leftmenu/leftmenu.js"></script>
+<link href="${baseUrl }/script/leftmenu/leftmenu.css" type="text/css" rel="stylesheet">
+
+<div class="left_menu">
+   <div class="first left1">版面列表</div>
+   <c:forEach items="${categories}" var="c">
+    <!-- 分类名称 -->
+     <div class="first left1" id="first_${c.id }">
+     	<img src="${baseUrl }/script/leftmenu/images/icon_menu_02.gif" alt="展开" id="first_img_${c.id }">
+     	<span onclick="showSecond('${c.id }')">${c.name }</span>
+     </div>
+     
+     <!-- 版面列表 -->
+     <ul class="left2 secondMenu" id="second_${c.id }">
+     	<c:forEach items="${c.forums }" var="f">
+        	<li class="second">
+        		<img src="${baseUrl }/script/leftmenu/images/icon_menu_04.gif" alt="${f.name }">
+          		<html:link action="/forum?method=show&id=${f.id }&page=1">${f.name }</html:link></li>
+       	</c:forEach>
+     </ul>
+    </c:forEach>
+	<script type="text/javascript">
+		showSecond("${forum.category.id}");
+	</script>
+</div>

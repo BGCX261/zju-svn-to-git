@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<bean id="userInfoRepository" 
+		class="com.jsict.jszju.repository.bean.UserInfoRepository" >
+		<property name="userInfoDao" ref="userInfoDao" />
+		</bean>
+	<bean id="userLoginCheckRepository" 
+		class="com.jsict.jszju.repository.bean.UserLoginCheckRepository" >
+		<property name="userLoginCheckDao" ref="userLoginCheckDao" />
+		<property name="itcastUserDao" ref="itcastUserDao" />
+		</bean>
+		
+	<bean id="articleContentRepository" 
+		class="com.jsict.jszju.repository.bean.ArticleContentRepository" >
+		<property name="articleContentDao" ref="articleContentDao" />
+		</bean>
+	<bean id="adminInfoCheckRepository" 
+		class="com.jsict.jszju.repository.bean.AdminInfoCheckRepository" >
+		<property name="adminInfoCheckDao" ref="adminInfoCheckDao" />
+		</bean>
+		
+	<bean id="adminResetInfoRepository" 
+		class="com.jsict.jszju.repository.bean.AdminResetInfoRepository" >
+		<property name="adminResetInfoDao" ref="adminResetInfoDao" />
+		</bean>
+		
+	<bean id="commentHanderRepository" 
+		class="com.jsict.jszju.repository.bean.CommentHanderRepository" >
+		<property name="commentHanderDao" ref="commentHanderDao" />
+		</bean>
+	<bean id="adminSourceManageRepository" 
+		class="com.jsict.jszju.repository.bean.AdminSourceManageRepository" >
+		<property name="adminSourceManageDao" ref="adminSourceManageDao" />
+		</bean>
+	<bean id="schoolFellowInfoCommitRepository" 
+		class="com.jsict.jszju.repository.bean.SchoolFellowInfoCommitRepository" >
+		<property name="schoolFellowInfoCommitDao" ref="schoolFellowInfoCommitDao" />
+		<property name="bbsTopicDao" ref="bbsTopicDao" />
+		</bean>
+	<bean id="schooleFellowInfoConsultRepository" 
+		class="com.jsict.jszju.repository.bean.SchooleFellowInfoConsultRepository" >
+		<property name="schooleFellowInfoConsultDao" ref="schooleFellowInfoConsultDao" />
+		</bean>
+	<bean id="schoolFellowNotesRepository" 
+		class="com.jsict.jszju.repository.bean.SchoolFellowNotesRepository" >
+		<property name="schoolFellowNotesDao" ref="schoolFellowNotesDao" />
+		</bean>
+	<bean id="fileRepository" 
+		class="com.jsict.jszju.repository.bean.FileRepository" >
+		<property name="fileDao" ref="fileDao" />
+		</bean>
+</beans>

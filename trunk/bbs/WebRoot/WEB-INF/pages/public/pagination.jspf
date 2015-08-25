@@ -1,0 +1,57 @@
+<%@ page language="java" pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<!-- 分页信息 -->
+<c:if test="${page.totalPage gt 1}">
+	<div align="right" style="margin: 0" class="pageview">
+		<div class="pages_numlnk" style="font-family: tahoma;">
+			<!-- 显示页码 -->
+			<c:forEach begin="${page.pageIndex.startPage }" end="${page.pageIndex.endPage}" var="i">
+				<c:if test="${i eq page.currentPage}">
+					<b>${i }</b>&nbsp;
+				</c:if>
+				<c:if test="${i ne page.currentPage}">
+					<a href="#" onclick="gotoPage0('${i }');return false;">${i }</a>&nbsp;
+				</c:if>
+			</c:forEach>
+
+			<!-- 总页码 -->
+			<span style="color: rgb(255, 69, 0);"> 共<b>${page.totalPage }</b>页 共<b>${page.totalItems }</b>条记录 </span>
+
+			<c:if test="${page.currentPage gt 1 }">
+				<a href="#" onclick="gotoPage0(1);return false;">[首页]</a>&nbsp;
+				<a href="#" onclick="gotoPage0(${page.currentPage - 1 });return false;">[上一页]</a>
+			</c:if>
+
+			<c:if test="${page.currentPage lt page.totalPage}">
+				<a href="#" onclick="gotoPage0(${page.currentPage + 1 });return false;">[下一页]</a>&nbsp;
+				<a href="#" onclick="gotoPage0(${page.totalPage });return false;">[尾页]</a> &nbsp;
+			</c:if>
+
+			<!-- 跳转到指定页码 -->
+			<input id="toPageNum" type="text" size="4" style="font: 10px; height: 15px" />
+			<img onclick="gotoPage0(document.getElementById('toPageNum').value)" align="absMiddle"
+					src="${baseUrl }/images/button_go.gif">
+		</div>
+		<script type="text/javascript">
+			function gotoPage0(pageNum){
+				if(isNaN(pageNum)){
+					alert("请输入正确的页码");
+					document.getElementById('toPageNum').focus();
+					return false;
+				}
+				if(pageNum < 1){
+					pageNum = 1;
+				}
+				if(pageNum > ${page.totalPage}){
+					pageNum = ${page.totalPage};
+				}
+				if(typeof(gotoPage) == "undefined"){
+					alert("请提供gotoPage()方法");
+					return false;
+				}
+				gotoPage(pageNum);
+			}
+		</script>
+	</div>
+</c:if>

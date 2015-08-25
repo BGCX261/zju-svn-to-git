@@ -1,0 +1,77 @@
+.login_username,.login_username_2,.login_group_code,.login_group_code_2,.login_pw,.login_pw_2,.login_safecode,.login_safecode_2
+	{
+	width: 150px;
+	height: 20px;
+	line-height: 20px;
+	border: 1px solid #ADCFE5;
+	font-size: 12px;
+	font-weight: bold;
+	color: #666;
+	font-family: Arial;
+}
+
+.login_username {
+	background: #fff url(../img/bg_user_name.png) no-repeat; 
+} 
+
+.login_username_2,.login_pw_2,.login_group_code_2,.login_safecode_2 {
+	background-image: none;
+}
+
+.login_group_code {
+	background: #fff url(../img/bg_group_code.gif) no-repeat;
+}
+
+.login_pw {
+	background: #fff url(../img/bg_user_pw.png) no-repeat;
+}
+
+.login_safecode {
+	background: #fff url(../img/bg_user_safecode.png) no-repeat;
+}
+
+.login_safecode,.login_safecode_2 {
+	width: 50px;
+}
+
+.login_panel {
+	font-weight: bold;
+	height: 15px;
+	text-indent: 30px;
+	width: 99%;
+	background: #CCCCCC url(../img/beforelogin.png) no-repeat
+		scroll 10px 8px;
+
+margin-top:10px;
+padding:10px 0 3px;
+}
+
+.login_content {
+	background: transparent url(../img/login_bottomnew.jpg) no-repeat scroll
+		left bottom;
+	padding: 0 0 10px;
+	width: 200px;
+	
+}
+
+/* Rule 13 of /ptl/css/foreground.css */
+.orange {
+	MARGIN: 10px 0px 0px
+}  /* Rule 42 of /ptl/css/foreground.css */
+.button1 {
+	BACKGROUND: url(../img/loginin.gif);
+	WIDTH: 70px;
+	CURSOR: pointer;
+	BORDER-TOP-STYLE: none;
+	BORDER-RIGHT-STYLE: none;
+	BORDER-LEFT-STYLE: none;
+	HEIGHT: 21px;
+	BORDER-BOTTOM-STYLE: none
+}  /* Rule 45 of /ptl/css/foreground.css */
+.orange A {
+	FLOAT: left;
+	MARGIN: 5px 0px;
+	COLOR: #ff6600;
+	TEXT-INDENT: 10px;
+	TEXT-DECORATION: underline
+}

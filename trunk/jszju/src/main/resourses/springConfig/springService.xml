@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<bean name="userInfoService"
+		class="com.jsict.jszju.service.bean.UserInfoService">
+		<property name="userInfoRepository" ref="userInfoRepository" />
+	</bean>
+
+	<bean name="userLoginCheckService"
+		class="com.jsict.jszju.service.bean.UserLoginCheckService">
+		<property name="userLoginCheckRepository"
+			ref="userLoginCheckRepository" />
+	</bean>
+
+	<bean name="articleContentService"
+		class="com.jsict.jszju.service.bean.ArticleContentService">
+		<property name="articleContentRepository"
+			ref="articleContentRepository" />
+	</bean>
+
+	<bean name="adminInfoCheckService"
+		class="com.jsict.jszju.service.bean.AdminInfoCheckService">
+		<property name="adminInfoCheckRepository"
+			ref="adminInfoCheckRepository" />
+	</bean>
+
+	<bean name="adminResetInfoService"
+		class="com.jsict.jszju.service.bean.AdminResetInfoService">
+		<property name="adminResetInfoRepository"
+			ref="adminResetInfoRepository" />
+	</bean>
+
+	<bean name="commentHanderService"
+		class="com.jsict.jszju.service.bean.CommentHanderService">
+		<property name="commentHanderRepository"
+			ref="commentHanderRepository" />
+	</bean>
+
+	<bean name="adminSourceManageService"
+		class="com.jsict.jszju.service.bean.AdminSourceManageService">
+		<property name="adminSourceManageRepository"
+			ref="adminSourceManageRepository" />
+	</bean>
+
+	<bean name="schooleFellowInfoConsultService"
+		class="com.jsict.jszju.service.bean.SchooleFellowInfoConsultService">
+		<property name="schooleFellowInfoConsultRepository"
+			ref="schooleFellowInfoConsultRepository" />
+	</bean>
+	
+	<bean name="schoolFellowInfoCommitService"
+		class="com.jsict.jszju.service.bean.SchoolFellowInfoCommitService">
+		<property name="schoolFellowInfoCommitRepository"
+			ref="schoolFellowInfoCommitRepository" />
+	</bean>
+	
+	<bean name="schoolFellowNotesService"
+		class="com.jsict.jszju.service.bean.SchoolFellowNotesService">
+		<property name="schoolFellowNotesRepository"
+			ref="schoolFellowNotesRepository" />
+	</bean>
+	
+	<bean name="fileService"
+		class="com.jsict.jszju.service.bean.FileService">
+		<property name="fileRepository"
+			ref="fileRepository" />
+	</bean>	
+	
+	
+
+
+
+
+</beans>

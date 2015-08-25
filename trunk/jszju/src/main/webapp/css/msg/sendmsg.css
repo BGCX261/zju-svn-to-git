@@ -1,0 +1,165 @@
+.cake01_080102 {
+	BORDER-RIGHT: #adb9c2 1px solid;
+	PADDING-RIGHT: 1px;
+	BORDER-TOP: #adb9c2 1px solid;
+	PADDING-LEFT: 1px;
+	BACKGROUND: #fff;
+	PADDING-BOTTOM: 1px;
+	BORDER-LEFT: #adb9c2 1px solid;
+	WIDTH: 446px;
+	PADDING-TOP: 1px;
+	BORDER-BOTTOM: #adb9c2 1px solid
+}  
+P {
+	BORDER-TOP-WIDTH: 0px;
+	PADDING-RIGHT: 0px;
+	PADDING-LEFT: 0px;
+	BORDER-LEFT-WIDTH: 0px;
+	BORDER-BOTTOM-WIDTH: 0px;
+	PADDING-BOTTOM: 0px;
+	MARGIN: 0px;
+	PADDING-TOP: 0px;
+	BORDER-RIGHT-WIDTH: 0px
+}  
+.cake01_080102 P {
+	MARGIN: -16px auto 0px;
+	WIDTH: 422px;
+	COLOR: #333;
+	LINE-HEIGHT: 20px;
+	TEXT-ALIGN: left
+}  
+SPAN {
+	BORDER-TOP-WIDTH: 0px;
+	PADDING-RIGHT: 0px;
+	PADDING-LEFT: 0px;
+	BORDER-LEFT-WIDTH: 0px;
+	BORDER-BOTTOM-WIDTH: 0px;
+	PADDING-BOTTOM: 0px;
+	MARGIN: 0px;
+	PADDING-TOP: 0px;
+	BORDER-RIGHT-WIDTH: 0px
+}  
+.cake01_080102 P SPAN {
+	COLOR: #ff0000
+}  
+.cake01_080102 .w422 {
+	FONT-WEIGHT: bold;
+	MARGIN: 0px auto 10px;
+	WIDTH: 422px !important;
+	COLOR: #333;
+	TEXT-ALIGN: left
+}  
+.clear {
+	CLEAR: both;
+	DISPLAY: block !important;
+	HEIGHT: 1px
+}  
+INPUT {
+	FONT-SIZE: 12px
+}  /* Rule 217 of /styles/2008/style2008.css */
+.cake01_080102 .input02 {
+	MARGIN-TOP: -1px !important;
+	VERTICAL-ALIGN: middle;
+	MARGIN-RIGHT: 4px
+}  /* Rule 26 of /styles/2008/global.css */
+A {
+	COLOR: #000;
+	TEXT-DECORATION: none
+}  /* Rule 213 of /styles/2008/style2008.css */
+.cake01_080102 .w422 A {
+	COLOR: #ff0000
+}  /* Rule 5 of /styles/2008/global.css */
+IMG {
+	BORDER-TOP-WIDTH: 0px;
+	PADDING-RIGHT: 0px;
+	PADDING-LEFT: 0px;
+	BORDER-LEFT-WIDTH: 0px;
+	BORDER-BOTTOM-WIDTH: 0px;
+	PADDING-BOTTOM: 0px;
+	MARGIN: 0px;
+	PADDING-TOP: 0px;
+	BORDER-RIGHT-WIDTH: 0px
+}  /* Rule 29 of /styles/2008/global.css */
+.right {
+	FLOAT: right
+}  /* Rule 218 of /styles/2008/style2008.css */
+.cake01_080102 IMG {
+	VERTICAL-ALIGN: middle
+}  /* Rule 16 of /styles/2008/global.css */
+TEXTAREA {
+	FONT-SIZE: 12px
+}  /* Rule 215 of /styles/2008/style2008.css */
+.tx {
+	BACKGROUND: url(/images/2008/pic35.gif) no-repeat left top
+}  /* Rule 219 of /styles/2008/style2008.css */
+#title,#to
+{
+	BORDER-RIGHT: #b6b5b5 1px solid;
+	BORDER-TOP: #b6b5b5 1px solid;
+	
+	BORDER-LEFT: #b6b5b5 1px solid;
+	WIDTH: 420px;
+	BORDER-BOTTOM: #b6b5b5 1px solid;
+	
+}
+.cake01_080102 TEXTAREA{
+	BORDER-RIGHT: #b6b5b5 1px solid;
+	BORDER-TOP: #b6b5b5 1px solid;
+	OVERFLOW-Y: scroll;
+	BORDER-LEFT: #b6b5b5 1px solid;
+	WIDTH: 420px;
+	BORDER-BOTTOM: #b6b5b5 1px solid;
+	HEIGHT: 130px
+}  /* Rule 223 of /styles/2008/style2008.css */
+.cake02_080102 {
+	BORDER-RIGHT: #d1d1d1 1px solid;
+	BORDER-TOP: #d1d1d1 1px solid;
+	BACKGROUND: #ebebeb;
+	MARGIN: 0px auto 10px;
+	BORDER-LEFT: #d1d1d1 1px solid;
+	WIDTH: 420px !important;
+	TEXT-INDENT: 10px;
+	PADDING-TOP: 8px;
+	BORDER-BOTTOM: #d1d1d1 1px solid;
+	HEIGHT: 20px;
+	TEXT-ALIGN: left
+}  /* Rule 20 of /styles/2008/global.css */
+H2 {
+	BORDER-TOP-WIDTH: 0px;
+	PADDING-RIGHT: 0px;
+	PADDING-LEFT: 0px;
+	BORDER-LEFT-WIDTH: 0px;
+	BORDER-BOTTOM-WIDTH: 0px;
+	PADDING-BOTTOM: 0px;
+	MARGIN: 0px;
+	FONT: 12px normal;
+	PADDING-TOP: 0px;
+	BORDER-RIGHT-WIDTH: 0px
+}  /* Rule 224 of /styles/2008/style2008.css */
+.title01_080102 H2 {
+	FONT-WEIGHT: bold;
+	BACKGROUND: url(pic_080102_01.gif);
+	MARGIN-BOTTOM: 10px;
+	WIDTH: 446px;
+	COLOR: #fff;
+	TEXT-INDENT: 10px;
+	PADDING-TOP: 6px;
+	HEIGHT: 19px;
+	TEXT-ALIGN: left
+}  /* Rule 225 of /styles/2008/style2008.css */
+.title01_080102 H2 A {
+	COLOR: #fff
+}  /* Rule 226 of /styles/2008/style2008.css */
+.title01_080102 IMG {
+	FLOAT: right;
+	MARGIN: -1px 4px 0px auto
+}
+
+
+
+/*read unread style*/
+
+.messageread{font-weight: normal; 
+	}
+.messageunread{font-weight: bold; 
+	}

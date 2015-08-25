@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<bean id="userInfoDao" parent="baseDao"
+		class="com.jsict.jszju.dao.bean.UserInfoDao" />
+	<bean id="userLoginCheckDao" parent="baseDao"
+		class="com.jsict.jszju.dao.bean.UserLoginCheckDao" />
+	<bean id="articleContentDao" parent="baseDao"
+		class="com.jsict.jszju.dao.bean.ArticleContentDao" />
+	<bean id="adminInfoCheckDao" parent="baseDao"
+		class="com.jsict.jszju.dao.bean.AdminInfoCheckDao" />
+	<bean id="adminResetInfoDao" parent="baseDao"
+		class="com.jsict.jszju.dao.bean.AdminResetInfoDao" />
+	<bean id="commentHanderDao" parent="baseDao"
+		class="com.jsict.jszju.dao.bean.CommentHanderDao" />
+	<bean id="adminSourceManageDao" parent="baseDao"
+		class="com.jsict.jszju.dao.bean.AdminSourceManageDao" />
+	<bean id="schoolFellowInfoCommitDao" parent="baseDao"
+		class="com.jsict.jszju.dao.bean.SchoolFellowInfoCommitDao" />
+	<bean id="schooleFellowInfoConsultDao" parent="baseDao"
+		class="com.jsict.jszju.dao.bean.SchooleFellowInfoConsultDao" />
+	<bean id="schoolFellowNotesDao" parent="baseDao"
+		class="com.jsict.jszju.dao.bean.SchoolFellowNotesDao" />
+	<bean id="fileDao" parent="baseDao"
+		class="com.jsict.jszju.dao.bean.FileDao" />
+	<bean id="itcastUserDao" parent="baseDao"
+		class="com.jsict.jszju.dao.bean.ItcastUserDao" />
+	<bean id="bbsTopicDao" parent="baseDao"
+		class="com.jsict.jszju.dao.bean.BbsTopicDao" />
+</beans>

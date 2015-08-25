@@ -1,0 +1,5 @@
+<%@ page language="java" pageEncoding="utf-8"%>
+<div id="webFooter">
+    <p>版权所有　　江苏省浙江大学校友会</p> 
+    <p><a href="http://www.jszuaa.com" target="_blank">江苏省浙江大学校友会网站首页</a></p>
+</div>

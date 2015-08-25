@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee   http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+                  
+	<!--~~~~~~~~~~~~~~ Spring 有关配置 ~~~~~~~~~~~~~~~~~~~ -->
+	<listener>     
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>    
+	<context-param>       
+		<param-name>contextConfigLocation</param-name> 
+		<param-value>classpath*:beans*.xml</param-value>
+	</context-param>     
+           
+	<!-- ~~~~~~~~~~~~~~ struts 有关配置 ~~~~~~~~~~~~~~~~~~~ -->
+	<servlet>       
+		<servlet-name>action</servlet-name>
+		<servlet-class>cn.itcast.bbs.web.struts.ActionServlet</servlet-class>
+		<init-param> 
+			<param-name>config</param-name>
+			<param-value>/WEB-INF/struts-config.xml,/WEB-INF/struts-config-admin.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>3</param-value>
+		</init-param>
+		<init-param> 
+			<param-name>detail</param-name>
+			<param-value>3</param-value>
+		</init-param>
+		<init-param>
+			<param-name>convertNull</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>action</servlet-name>
+		<url-pattern>*.do</url-pattern>    
+	</servlet-mapping>
+	<!-- ~~~~~~~~~~~~~~ struts 有关配置结束 ~~~~~~~~~~~~~~~~~~~ -->
+
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~  FCKeditor 有关配置  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<servlet>
+		<servlet-name>Connector</servlet-name>
+		<servlet-class>cn.itcast.bbs.fckeditor.ConnectorServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+    
+	<servlet-mapping> 
+		<servlet-name>Connector</servlet-name>
+		<url-pattern>/widgets/fckeditor/editor/filemanager/connectors/*</url-pattern>
+	</servlet-mapping>
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~  FCKeditor 有关配置结束  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+   
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+	<!-- 监听器 -->
+	<listener>
+		<listener-class>cn.itcast.bbs.web.listeners.OnlineUserSessionListener</listener-class>
+	</listener>
+
+
+</web-app>

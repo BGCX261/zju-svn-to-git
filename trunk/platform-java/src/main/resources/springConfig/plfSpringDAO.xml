@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="roleDao" parent="plfBaseDao"
+		class="com.jsict.platform.dao.bean.RoleDao" />
+
+	<bean id="businessLogDao" parent="plfBaseDao"
+		class="com.jsict.platform.dao.bean.BusinessLogDao" />
+
+	<bean id="businessLogDetailDao" parent="plfBaseDao"
+		class="com.jsict.platform.dao.bean.BusinessLogDetailDao" />
+
+	<bean id="companyDao" parent="plfBaseDao"
+		class="com.jsict.platform.dao.bean.CompanyDao" />
+
+	<bean id="permissionDao" parent="plfBaseDao"
+		class="com.jsict.platform.dao.bean.PermissionDao" />
+
+	<bean id="rolePermissionDao" parent="plfBaseDao"
+		class="com.jsict.platform.dao.bean.RolePermissionDao" />
+
+	<bean id="userAccountDao" parent="plfBaseDao"
+		class="com.jsict.platform.dao.bean.UserAccountDao" />
+
+	<bean id="userProfileDao" parent="plfBaseDao"
+		class="com.jsict.platform.dao.bean.UserProfileDao" />
+
+	<bean id="userRoleDao" parent="plfBaseDao"
+		class="com.jsict.platform.dao.bean.UserRoleDao" />
+		
+	<bean id="messagesDao" parent="plfBaseDao"
+		class="com.jsict.platform.dao.bean.MessagesDao" />
+
+	<bean id="plfCodeBookDao" parent="plfBaseDao"
+		class="com.jsict.platform.dao.bean.CodeBookDao" />
+		
+	<bean id="subsystemDao" parent="plfBaseDao"
+	class="com.jsict.platform.dao.bean.SubsystemDao" />
+	
+	<bean id="assignableRoleDao" parent="plfBaseDao" class="com.jsict.platform.dao.bean.AssignableRoleDao"/>
+</beans>

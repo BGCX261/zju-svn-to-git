@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean name="/index"
+		class="com.jsict.jszju.action.IndexAction" />
+		
+	<bean name="/menu" 
+		class="com.jsict.jszju.action.MenuAction" />
+		
+	<!-- 	
+	<bean name="/userinfoSaveAction"
+		class="com.jsict.jszju.action.UserinfoSaveAction">
+		<property name="userInfoService" ref="userInfoService" />
+	</bean>
+	 -->
+	
+	<bean name="/userLogin"
+		class="com.jsict.jszju.action.UserLoginAction">
+		<property name="userLoginCheckService" ref="userLoginCheckService" />
+	</bean>
+	
+	<bean name="/linkToMain"
+		class="com.jsict.jszju.action.linkToMainAction">
+	</bean>
+	<bean name="/comment"
+		class="com.jsict.jszju.action.CommentListAction">
+		<property name="userInfoService" ref="userInfoService" />
+		<property name="articleContentService" ref="articleContentService" />
+		<property name="commentHanderService" ref="commentHanderService" />
+	</bean>
+		<bean name="/schoolfellowinfocommit"
+		class="com.jsict.jszju.action.SchooleFellowInfoCommitListAction">
+		<property name="userInfoService" ref="userInfoService" />
+		<property name="schoolFellowInfoCommitService" ref="schoolFellowInfoCommitService" />
+		<property name="schooleFellowInfoConsultService" ref="schooleFellowInfoConsultService" />
+	</bean>
+	
+	<bean name="/schoolfellowinforhelp"
+		class="com.jsict.jszju.action.SchooleFellowInfoConsultListAction">
+		<property name="userInfoService" ref="userInfoService" />
+		<property name="schooleFellowInfoConsultService" ref="schooleFellowInfoConsultService" />
+	</bean>
+	<!-- 以下是后台管理相关的bean Begin-->
+	
+	<bean name="/adminInfoSubmit"
+		class="com.jsict.jszju.action.admin.CheckAdminLoginAction">
+		<property name="adminInfoCheckService" ref="adminInfoCheckService" />
+	</bean>
+	
+	<bean name="/resetAdminPsw"
+		class="com.jsict.jszju.action.admin.AdminInfoResetAction">
+		<property name="adminInfoCheckService" ref="adminInfoCheckService" />
+	</bean>
+	<bean name="/admininfoRef"
+		class="com.jsict.jszju.action.admin.AdminInfoListAction">
+		<property name="adminInfoCheckService" ref="adminInfoCheckService" />
+	</bean>
+	
+	<bean name="/adminArticleContent"
+		class="com.jsict.jszju.action.admin.AdminIndexAction">
+	</bean>
+	<bean name="/adminIndex"
+		class="com.jsict.jszju.action.admin.AdminIndexMainAction">
+	</bean>
+	<bean name="/adminArticle"
+		class="com.jsict.jszju.action.admin.AdminArticleMainAction">
+	</bean>
+	<bean name="/resourcemanage"
+		class="com.jsict.jszju.action.admin.resource.AdminSourceManageListAction">
+		<property name="adminSourceManageService"
+			ref="adminSourceManageService" />
+	</bean>
+	<bean name="/coreFunction"
+		class="com.jsict.jszju.action.admin.resource.CoreFunctionListAction">
+	</bean>
+	<bean name="/resourcemanageEdit"
+		class="com.jsict.jszju.action.admin.resource.AdminSourceManageAddEditAction">
+		<property name="adminSourceManageService"
+			ref="adminSourceManageService" />
+	</bean>
+	<bean name="/linkToView"
+		class="com.jsict.jszju.action.frontMenu.ArticleListViewAction">
+		<property name="articleContentService"
+			ref="articleContentService" />
+		<property name="schoolFellowInfoCommitService"
+			ref="schoolFellowInfoCommitService" />
+		<property name="schooleFellowInfoConsultService"
+			ref="schooleFellowInfoConsultService" />
+		<property name="schoolFellowNotesService"
+			ref="schoolFellowNotesService" />
+	</bean>
+	<bean name="/viewAllArticle"
+		class="com.jsict.jszju.action.frontMenu.AllArticleViewAction">
+		<property name="articleContentService"
+			ref="articleContentService" />
+	</bean>
+	
+	<bean name="/acticleContentMenu"
+		class="com.jsict.platform.action.MenuAction">
+		<property name="authorizationService"
+			ref="authorizationService" />
+		<property name="platformCode" value="1" />
+	</bean>
+	
+	<bean name="/ArticleContentEdit"
+		class="com.jsict.jszju.action.admin.ArticleContentListAction">
+			<property name="articleContentService"
+			ref="articleContentService" />
+	</bean>
+	
+	<bean name="/ArticleContentAddEdit"
+		class="com.jsict.jszju.action.admin.ArticleContentAddEditAction">
+			<property name="articleContentService"
+			ref="articleContentService" />
+	</bean>
+	
+	<bean name="/schoolFellowNotes"
+		class="com.jsict.jszju.action.SchoolFellowNotesListAction">
+			<property name="schoolFellowNotesService"
+			ref="schoolFellowNotesService" />
+	</bean>
+	<!-- 以下是后台管理相关的bean End -->
+	
+	<!-- 前台head页面菜单对应处理bean Begin -->
+	<bean name="/dynamicAction"
+		class="com.jsict.jszju.action.frontMenu.FrontMenuListAction">
+		<property name="articleContentService"
+			ref="articleContentService" />
+	</bean>
+		
+	<!-- 前台head页面菜单对应处理bean End -->
+	
+		<bean name="/file"
+		class="com.jsict.jszju.action.admin.resource.FileAction">
+		<property name="fileService"
+			ref="fileService" />
+		</bean>
+		<bean name="/fileView"
+		class="com.jsict.jszju.action.admin.resource.FileHanderAction">
+		<property name="fileService"
+			ref="fileService" />
+	</bean>
+	<bean name="/excellentsf"
+		class="com.jsict.jszju.action.frontMenu.ExcellentSchoolFellowListAction">
+		<property name="fileService"
+			ref="fileService" />
+	</bean>
+	
+	
+	
+</beans>

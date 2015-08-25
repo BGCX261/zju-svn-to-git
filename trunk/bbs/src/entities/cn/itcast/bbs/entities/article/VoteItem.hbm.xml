@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.itcast.bbs.entities.article">
+	<class name="VoteItem" table="itcast_voteitem">
+		<id name="id" column="id_">
+			<generator class="native" />
+		</id>
+
+		<property name="content" column="content_" length="255" />
+		<property name="result" column="result_" />
+		<many-to-one name="vote" column="voteId_" lazy="false" />
+		<set name="voteRecords" table="itcast_voteItemsVoteRecords" cascade="delete">
+			<key column="voteItemId_" />
+			<many-to-many class="VoteRecord" column="voteRecordId_"></many-to-many>
+		</set>
+	</class>
+</hibernate-mapping>

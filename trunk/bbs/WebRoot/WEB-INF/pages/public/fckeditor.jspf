@@ -1,0 +1,11 @@
+<%@ page language="java" pageEncoding="utf-8"%>
+
+<script type="text/javascript" src="${baseUrl }/widgets/fckeditor/fckeditor.js"></script>
+<script type="text/javascript">
+	var editor = new FCKeditor("content");
+	editor.BasePath="${pageContext.request.contextPath}/widgets/fckeditor/";
+	editor.ToolbarSet="itcastbbs";
+	editor.Config['SkinPath'] = "${pageContext.request.contextPath}/widgets/fckeditor/editor/skins/office2003/";
+	// editor.Create();
+	editor.ReplaceTextarea();
+</script>

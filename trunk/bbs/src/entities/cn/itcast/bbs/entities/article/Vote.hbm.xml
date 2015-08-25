@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.itcast.bbs.entities.article">
+	<class name="Vote" table="itcast_vote">
+		<id name="id" column="id_">
+			<generator class="native" />
+		</id>
+
+		<property name="title" column="title_" length="255" />
+		<property name="creationTime" column="creationTime_" type="timestamp" />
+		<property name="closeTime" column="closeTime_" />
+		<property name="multiple" column="multiple_" />
+		<property name="result" column="result_" />
+		<many-to-one name="topic" column="topicId_" lazy="false"/>
+		<list name="voteItems" lazy="false" cascade="all-delete-orphan">
+			<key column="voteId_" />
+			<index column="idx_" />
+			<one-to-many class="VoteItem" />
+		</list>
+	</class>
+</hibernate-mapping>

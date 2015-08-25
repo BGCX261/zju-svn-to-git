@@ -1,0 +1,174 @@
+/* --- */
+.portal {
+	margin-top: 20px;
+	width: 1050px;
+}
+
+/* --- */
+.portal fieldset {
+	padding: 0px;
+	border: 1px solid #A2CBF3;
+	font-weight: bold;
+	margin: 0 20px;
+}
+
+.portal fieldset legend {
+	font-size: 14px;
+	color: #353535;
+}
+
+.portal fieldset ul {
+	margin: 15px;
+}
+
+.portal fieldset ul li {
+	text-indent: 10px;
+	list-style-type: none;
+	width: 230px;
+	height: 30px;
+}
+
+.portal fieldset ul li a {
+	text-decoration: underline;
+	color: #333333;
+	line-height: 16px;
+	width: 230px;
+}
+
+/* --- */
+.sort {
+	clear: both;
+	margin: 20px;
+	width: 1010px;
+}
+
+.sort h2 {
+	border-top: #a2cbf3 1px solid;
+	border-bottom: #ddd 1px solid;
+	padding-bottom: 0px;
+	padding-top: 2px;
+	padding-left: 5px;
+	padding-right: 5px;
+	background: #e6f7ff;
+	height: 21px;
+	line-height: 21px;
+	font-size: 14px;
+	margin-bottom: 0px;
+	line-height: 21px;
+}
+
+.sort h2 a {
+	font-weight: normal;
+	font-size: 12px;
+	float: right;
+	text-decoration: underline
+}
+
+/* mainbox */
+.mainbox {
+	border: 1px solid #CAD9EA;
+	padding: 1px;
+	margin-bottom: 0px;
+	padding-bottom: 5px;
+	width: 100%;
+}
+
+.mainbox table {
+	width: 100%;
+}
+
+.mainbox h3,mainbox h3 a {
+	padding-right: 5px;
+	padding-left: 5px;
+	padding-bottom: 0px;
+	padding-top: 2px;
+	margin-bottom: 3px;
+	font-weight: bold;
+	font-size: 14px;
+	color: #0000ff;
+	text-decoration: underline;
+}
+
+.mainbox h5 {
+	margin-top: 0px;
+	margin-bottom: 5px;
+	padding-right: 5px;
+	padding-left: 5px;
+	padding-bottom: 0px;
+	padding-top: 2px;
+	height: 20px;
+	font-weight: normal;
+	font-size: 13px;
+}
+
+.mainbox tbody th,.mainbox tbody td {
+	border-top: 1px solid #cad9ea;
+	padding: 5px;
+}
+
+.mainbox tbody cite,.mainbox tbody em {
+	line-height: 1.3em;
+}
+
+/* forums list */
+.forum_list th {
+	padding-left: 55px !important;
+}
+
+.forum_list thead th,.forum_list thead td {
+	background: #f5fafe none repeat scroll 0 0;
+	color: #666666;
+	line-height: 22px;
+	padding: 2px 5px;
+	text-align: left;
+}
+
+.forum_list tbody th {
+	background-image: url( ./images/forum_list_pic_new.gif );
+	background-repeat: no-repeat;
+	background-position: 13px 50%;
+	height: 40px;
+}
+
+.forum_list td.nums {
+	width: 80px;
+	text-align: center;
+}
+
+.forum_list .lastpost {
+	width: 260px;
+}
+
+.forum_list tbody th,.forum_list tbody td {
+	color: #666;
+	padding: 5px;
+}
+
+.forum_list th {
+	text-align: left;
+}
+
+.forum_list h2 em {
+	color: #0099cc;
+}
+
+.forum_list cite {
+	display: block;
+}
+
+.forum_list td.lastpost {
+	width: 260px;
+}
+
+.forum_list td.lastpost cite {
+	font-style: normal;
+}
+
+.forum_list td.lastpost cite a {
+	color: #999;
+	font-style: normal;
+}
+
+.forum_list td.author em,.forum_list td.lastpost em {
+	font-size: 0.83em;
+}

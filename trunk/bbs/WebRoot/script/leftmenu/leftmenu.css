@@ -1,0 +1,63 @@
+div.left_menu {
+	background: #F5FAFE;
+	padding: 0px;
+	margin: 0px;
+	width: 189px;
+	float: left;
+}
+
+div.left_menu .item_img {
+	float: left;
+	margin: 0px;
+	padding: 0px;
+	padding-top: 3px;
+	height: 100%;
+}
+
+div.left_menu .first {
+	margin: 0px;
+	padding: 0px;
+	color: #0D65BF;
+}
+
+/* 为什么IE下不是手形? */
+div.left_menu  .first:hover {
+	cursor: pointer;
+}
+
+div.left_menu a {
+	text-decoration: none;
+	color: #0D65BF;
+}
+
+div.left_menu a:hover {
+	text-decoration: underline;
+}
+
+div.left_menu .secondMenu {
+	display: none;
+}
+
+div.left_menu .left1 {
+	padding-left: 15px;
+}
+
+div.left_menu .left2 {
+	padding-left: 20px;
+}
+
+div.left_menu .first {
+	font-size: 14px;
+	text-align: left;
+	height: 24px;
+	padding-top: 6px;
+	background: url( "images/icon_menu_01.gif" ) repeat;
+}
+
+div.left_menu .second {
+	margin: 5px 0px;
+	font-size: 12px;
+	text-align: left;
+	line-height: 20px;
+	list-style: none;
+}

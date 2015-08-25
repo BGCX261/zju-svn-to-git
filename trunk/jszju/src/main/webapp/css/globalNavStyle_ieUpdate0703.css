@@ -1,0 +1,8 @@
+
+.menu ul li a:hover {color:#fff;background:#fff url(file:///E|/159/style3/images/bgON.gif) top left repeat-x;}
+/*positioning for sub nav*/
+.menu ul li a:hover ul {display:block;position:absolute;top:24px;left:0;background:#fff;margin-top:0;marg\in-top:1px;border-top:1px solid #fff;}
+/*drop-down on state*/
+.menu ul li a:hover ul li a {display:block;background:#E9E9E9;color:#000;height:auto;line-height:15px;padding:2px 16px 2px 16px;width:130px;w\idth:120px;border-bottom:1px solid #fff;}
+/*drop-down over state*/
+.menu ul li a:hover ul li a:hover {background:#896296;color:#fff;}

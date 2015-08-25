@@ -1,0 +1,1056 @@
+/* ============================================   整体控制   ============================================ */
+* {
+/* 指针样式 */
+	cursor: auto;
+}
+
+ul,li,body { /* 去除列表和页面默认边距*/
+	margin: 0;
+	padding: 0;
+}
+
+ul,li { /* 去除列表默认样式 */
+	list-style-type: none;
+}
+
+body { /* 默认字体大小，页面整体背景 */
+	font-size: 12px;
+}
+
+table { /*合并表格边线，始终以一像素显示  */
+	border-collapse: collapse;
+}
+
+a { /* 默认链接样式 */
+	display: inline-block;
+	color: blue;
+	text-decoration: none;
+}
+
+a:hover { /* 默认鼠标指上状态 */
+	cursor: pointer;
+	text-decoration: none;
+}
+
+input { /* 默认输入框样式 */
+	border: 1px solid silver;
+	height: 14px;
+	line-height: 15px;
+	text-align:left;
+}
+
+select { /* 默认下拉菜单样式 */
+	height: 20px;
+	font-size: 12px;
+	border:none;
+	margin:-2px;
+
+}
+.inputStyle label.Triple pre {
+ clientWhidth:300px;
+ white-space: pre-wrap;       /* CSS-3 */
+ white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+ white-space: -pre-wrap;      /* Opera 4-6 */
+ white-space: -o-pre-wrap;    /* Opera 7 */
+ word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+
+fieldset_input3_Low label select {
+    height: 20px;
+	font-size: 12px;
+	border:none;
+	margin:-2px;
+}
+.inputStyle label.Triple select {
+	font-size: 12px;
+	height: 20px;
+	border:none;
+	margin:-2px;
+}
+.inputStyle2 label.Triple select {
+	font-size: 12px;
+	height: 20px;
+	border:none;
+	margin:-2px;
+}
+.inputStyle label.Triple textarea {
+    height: 50px;
+	font-size: 12px;
+    border: 1px solid silver;
+    width:55%;
+}
+.inputStyle2 label.Triple textarea {
+    height: 50px;
+	font-size: 12px;
+    border: 1px solid silver;
+    width:55%;
+}
+.sel { 
+	height: 19px;
+	font-size: 12px;
+	border:none;
+	margin:-2px;
+
+}
+input.rdo,input.cbx { /* 默认单选框，多选框样式 */
+	border: none;
+	width: 15px;
+	top: 0;
+}
+
+input.readOnly{ /* 输入框，文字域只读样式 */
+	background: url( ../img/emblem-readonly.gif ) left silver no-repeat;
+	color: #666;
+	border: silver 1px solid;
+	text-indent: 20px;
+}
+textarea.readOnly {
+	background: url( ../img/emblem-readonly.gif ) left silver no-repeat;
+	color: #666;
+	border: silver 1px solid;
+	text-indent: 20px;
+}
+.bold {
+	font-weight: bold;
+	background: #ddd;
+}
+
+.clearfloat { /* 此类应当放在 div 或 break 元素上，而且该元素应当是完全包含浮动的容器关闭之前的最后一个元素 */
+	clear: both;
+	height: 0;
+	font-size: 1px;
+	line-height: 0px;
+}
+
+/* =========================================== 通用元素  ================================================ */
+div.bcL,div.bcR {
+	padding: 5px 5px 0 5px;
+	border: 1px solid white;
+	text-align: center;
+}
+div.bcC {
+	padding: 5px 5px 0 5px;
+	border: 1px solid white;
+	text-align: center;
+	
+}
+.btn4,.btn6,.btn8,.bun_mini {
+	text-align: center;
+	cursor: pointer;
+	height: 19px;
+	line-height: 19px;
+	vertical-align: middle;
+	border: 0;
+}
+
+.btn {
+	text-align: center;
+	cursor: pointer;
+	height: 19px;
+	line-height: 19px;
+	vertical-align: bottom;
+	text-align: center;
+	margin-bottom: 20px;
+	margin-right: 20px;
+	border: 0;
+}
+
+input.bun_mini {
+	width: 31px;
+	background: url( ../img/button_mini.gif )
+}
+
+input.btn {
+	width: 54px;
+	background: url( ../img/button.jpg );
+}
+
+input.btn4 {
+	width: 80px;
+	background: url( ../img/button4.jpg );
+}
+
+input.btn6 {
+	width: 100px;
+	background: url( ../img/button6.jpg );
+}
+
+input.btn8 {
+	width: 120px;
+	background: url( ../img/button8.jpg );
+}
+
+/* =========================================== 布局用元素 Iframe  ================================================ */
+iframe.side { /* iframe 边栏样式*/
+	float: left;
+	width: 142px;
+	min-height: 800px !important;
+	height: auto !important;
+	height: 800px;
+}
+
+iframe.main { /* iframe 右侧主体样式*/
+	float: left;
+	width: 860px;
+	min-height: 800px !important;
+	height: auto !important;
+	height: 800px;
+}
+
+iframe.foot { /* iframe 右侧主体样式*/
+	float: left;
+	width: 1002px;
+	min-height: 30px !important;
+	height: auto !important;
+	height: 30px;
+}
+
+/* =========================================== 布局用元素 Div  ================================================ */
+	/* 首页 */
+body.index { /* 首页:首页背景样式 */
+	background: #e7ece2;
+}
+
+body.main { /* 主体:首页背景样式 */
+	background: #dfe3ef;
+}
+
+/* 右侧主体页面 */
+div.container { /* 首页:页面全局布局容器，设置页面居中 */
+	width: 1002px; /* 使用比最大宽度 (800px) 小 20px 的宽度可显示浏览器界面元素，并避免出现水平滚动条 */
+	margin: 0 auto; /* 自动边距（与宽度一起）会将页面居中 */
+	height: 560px;
+}
+
+/* 头部页面 */
+div.head { /* 头部页面：头部布局容器，背景 */
+	width: 1002px;
+	height: 93px;
+	background: url( ../img/head.png ) top no-repeat;
+}
+
+/* 脚部页面 */
+div.footer { /*脚部页面：：脚部布局容器，背景  */
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+	width: 1002px;
+	background: url( ../img/foot.gif );
+	color: #666;
+}
+
+/* ============================================== 模块元素  ==================================================== */
+	/* 头部信息栏 */
+div.nav { /*头部页面: 显示信息栏容器， 背景  */
+	width: 95.9%;
+	min-height: 25px !important;
+	height: auto !important;
+	height: 25px;
+	border: 1px solid #cfe4ff;
+	background: url( ../img/breadCrube.jpg ) repeat-x;
+	padding: 0 2%;
+}
+
+.role {
+	padding: 3px 0 3px 20px;
+	float: left;
+}
+
+.mailbox {
+	padding: 3px 0 3px 20px;
+	float: right;
+}
+
+.mail_img,.mail_info {
+	float: left;
+}
+
+.currentTime { /* 当前时间显示时间位置  icon*/
+	padding: 3px 0 3px 20px;
+	float: right;
+}
+
+.logout {
+	padding: 3px 0 3px 20px;
+	height: 15px;
+	float: right;
+}
+
+.Breadcrube a { /* 面包屑导航样式*/
+	margin: 0 5px 0 5px;
+	font-size: 12px;
+}
+
+.top_banner {
+	padding: 3px 0;
+	width: 98%;
+	margin: .4% .7% 0 .7%;
+	background: url( ../img/table-title.jpg ) top repeat-x white;
+	border: 1px solid white;
+	border-bottom: 1px solid #cad1d7;
+	color: #666666;
+}
+
+.top_banner span { /* 欢迎信息位置  icon*/
+	padding-left: 5px;
+}
+
+.top_banner  span a {
+	color: #669900;
+	margin-left: 10px;
+	background: none;
+}
+
+/* 表格和列表容器 */
+.warp { /* 最外层容器 */
+	width: 98%;
+	margin: .4% .7%;
+	float: left;
+	border: 1px solid #8f97a2;
+	min-height: 1px !important;
+	height: auto !important;
+	height: 1px;
+	background: white;
+	padding: 0 0 1% 0
+}
+
+.warp_s { /* 最外层容器 */
+	width: 96%;
+}
+
+.title { /* 头部说明信息栏 */
+	float: left;
+	width: 98.8%;
+	padding: 3px .5%;
+	background: url( ../img/table-title.jpg ) top repeat-x;
+	border: 1px solid white;
+	border-bottom: 1px solid #cad1d7;
+}
+.title1 { /* 头部说明信息栏 */
+	float: left;
+	height:28px;
+	width: 98.8%;
+	padding: 3px .5%;
+	background-color:#cdf4fb;
+	border-bottom: 1px solid #cad1d7;
+}
+/* 表格样式 */
+.tableStyle { /* 表格样式 */
+	width: 98%;
+	text-align: center;
+	border: 1px solid silver;
+	margin: 1% 1% 1% 1%;
+	table-layout: fixed;
+}
+
+.tableStyle  th {
+	background: #b6cbe6;
+	border: 1px solid #95acce;
+	height: 22px;
+	white-space: nowrap;
+}
+
+.tableStyle td {
+	text-align: center;
+	font-size: 12px;
+	border: 1px solid #bac2cf;
+	overflow: hidden;
+	height: 20px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	/*word-wrap: break-word;*/
+}
+
+.tableStyle input {
+	width: 96%;
+}
+.tableStyle label select{
+    height: 19px;
+	font-size: 12px;
+	border:none;
+	margin:-2px;
+	}
+.tableStyle input.rdo,.tableStyle input.cbx {
+	border: none;
+	width: 15px;
+	top: 0;
+}
+
+/* 表格样式 */
+.tableStyle2 { /* 表格样式 */
+	width: 98%;
+	text-align: center;
+	border: 1px solid silver;
+	margin: 1% 1% 1% 1%;
+	table-layout: fixed;
+}
+
+.tableStyle2  th {
+	background: #b6cbe6;
+	border: 1px solid #95acce;
+	height: 22px;
+	white-space: nowrap;
+}
+
+.tableStyle2 td {
+	text-align: center;
+	font-size: 12px;
+	border: 1px solid #bac2cf;
+	overflow: hidden;
+	height: 20px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	/*word-wrap: break-word;*/
+}
+
+.tableStyle2 input {
+	width: 96%;
+}
+.tableStyle2 label select{
+    height: 19px;
+	font-size: 12px;
+	border:none;
+	margin:-2px;
+	}
+.tableStyle2 input.rdo,.tableStyle2 input.cbx {
+	border: none;
+	width: 15px;
+	top: 0;
+}
+/* 输入控件样式 */
+.inputStyle {
+	float: left;
+	width: 96%;
+	border: none;
+	margin: 1% 1% 0 1% !important;
+	margin: 1% 0.5% 0 0.5%;
+
+}
+
+.inputStyle label {
+	line-height: 21px;
+	width: 33.3%;
+	float: left;
+	margin: .4% 0;
+	text-align: left;
+}
+
+.inputStyle label span {
+	width: 35.3%;
+	float: left;
+	text-align: right;
+}
+
+.inputStyle label input,.inputStyle label span.Single
+	{
+	position: relative;
+	vertical-align: top;
+	width: 45%;
+}
+.inputStyle label textarea
+	{
+    position: relative;
+	vertical-align: top;
+	border:none;
+}
+.inputStyle label.Triple {
+	width: 99.9%;
+}
+
+.inputStyle label.Triple span {
+	width: 11.7%;
+	float: left;
+	text-align: right;
+}
+
+.inputStyle label.Triple input  {
+	width: 18.3%;
+}
+
+.inputStyle label input.Triple,.inputStyle label textarea.Triple,.inputStyle label span.Triple
+	{
+	width: 82.7%;
+}
+
+.inputStyle label.Double {
+	width: 66.6%;
+}
+
+.inputStyle label.Double span {
+	width: 17.6%;
+	float: left;
+	text-align: right;
+}
+
+.inputStyle label.Double input,.inputStyle label.Double textarea {
+	width: 24.5%;
+}
+
+.inputStyle label input.Double,.inputStyle label textarea.Double,.inputStyle label span.Double
+	{
+	width: 77.5%;
+}
+
+.inputStyle label span.Single,.inputStyle label span.Double,.inputStyle label span.Triple
+	{
+	float: left;
+	text-align: left;
+}
+
+.inputStyle label input.rdo,.inputStyle label input.cbx {
+	/* 默认单选框，多选框样式 */
+	border: none;
+	width: 15px;
+	top: 0;
+}
+
+.inputStyle label div.fckInput {
+	width: 99%;
+	min-height: 400px !important;
+	height: auto !important;
+	height: 400px;
+}
+
+/*将继承的样式取消*/
+.inputStyle label div.fckInput span {
+	width: auto;
+	float: none;
+	text-align: left;
+	line-height: 150%;
+}
+
+/* 输入控件样式 */
+.inputStyle2 {
+	float: left;
+	width: 96%;
+	border: none;
+	margin: 1% 1% 0 1% !important;
+	margin: 1% 0.5% 0 0.5%;
+}
+
+.inputStyle2 label {
+	line-height: 21px;
+	width: 33.3%;
+	float: left;
+	margin: .4% 0;
+	text-align: left;
+}
+
+.inputStyle2 label span {
+	width: 35.3%;
+	float: left;
+	text-align: right;
+}
+
+.inputStyle2 label input,.inputStyle2 label span.Single
+	{
+	position: relative;
+	vertical-align: top;
+	width: 47%;
+}
+.inputStyle2 label textarea
+	{
+    position: relative;
+	vertical-align: top;
+	border:none;
+}
+.inputStyle2 label.Triple {
+	width: 99.9%;
+}
+
+.inputStyle2 label.Triple span {
+	width: 11.7%;
+	float: left;
+	text-align: right;
+}
+
+.inputStyle2 label.Triple input  {
+	width: 18.3%;
+}
+
+.inputStyle2 label input.Triple,.inputStyle2 label textarea.Triple,.inputStyle2 label span.Triple
+	{
+	width: 81.7%;
+}
+
+.inputStyle2 label.Double {
+	width: 66.6%;
+}
+
+.inputStyle2 label.Double span {
+	width: 17.6%;
+	float: left;
+	text-align: right;
+}
+
+.inputStyle2 label.Double input,.inputStyle2 label.Double textarea {
+	width: 24.5%;
+}
+
+.inputStyle2 label input.Double,.inputStyle2 label textarea.Double,.inputStyle2 label span.Double
+	{
+	width: 77.5%;
+}
+
+.inputStyle2 label span.Single,.inputStyle2 label span.Double,.inputStyle2 label span.Triple
+	{
+	float: left;
+	text-align: left;
+}
+
+.inputStyle2 label input.rdo,.inputStyle2 label input.cbx {
+	/* 默认单选框，多选框样式 */
+	border: none;
+	width: 15px;
+	top: 0;
+}
+
+.inputStyle2 label div.fckInput {
+	width: 99%;
+	min-height: 400px !important;
+	height: auto !important;
+	height: 400px;
+}
+
+/*将继承的样式取消*/
+.inputStyle2 label div.fckInput span {
+	width: auto;
+	float: none;
+	text-align: left;
+	line-height: 150%;
+}
+
+/* 输入控件样式 */
+.inputStyle3 {
+	float: left;
+	width: 96%;
+	border: none;
+	margin: 1% 1% 0 1% !important;
+	margin: 1% 0.5% 0 0.5%;
+}
+
+.inputStyle3 label {
+	line-height: 21px;
+	width: 33.3%;
+	float: left;
+	margin: .4% 0;
+	text-align: left;
+}
+
+.inputStyle3 label span {
+	width: 49.3%;
+	float: left;
+	text-align: right;
+}
+
+.inputStyle3 label input,.inputStyle3 label span.Single
+	{
+	position: relative;
+	vertical-align: top;
+	width: 40%;
+}
+.inputStyle3 label textarea
+	{
+    position: relative;
+	vertical-align: top;
+	border:none;
+}
+.inputStyle3 label text
+	{
+    height:14px;
+    line-height:15px;
+	text-align: center;
+	border: 1px solid silver;
+}
+.inputStyle3 label.Triple {
+	width: 99.9%;
+}
+
+.inputStyle3 label.Triple span {
+	width: 16.5%;
+	float: left;
+	text-align: right;
+}
+
+.inputStyle3 label.Triple input  {
+	width: 19.8%;
+}
+.inputStyle3 label.Triple textarea  {
+	width: 80%;
+	height: 50px;
+	font-size: 12px;
+    border: 1px solid silver;
+}
+.inputStyle3 label input.Triple,.inputStyle3 label span.Triple
+	{
+	width: 81.7%;
+}
+
+.inputStyle3 label.Double {
+	width: 66.6%;
+}
+
+.inputStyle3 label.Double span {
+	width: 17.6%;
+	float: left;
+	text-align: right;
+}
+
+.inputStyle3 label.Double input,.inputStyle3 label.Double textarea {
+	width: 24.5%;
+}
+
+.inputStyle3 label input.Double,.inputStyle3 label textarea.Double,.inputStyle3 label span.Double
+	{
+	width: 77.5%;
+}
+
+.inputStyle3 label span.Single,.inputStyle3 label span.Double,.inputStyle3 label span.Triple
+	{
+	float: left;
+	text-align: left;
+}
+
+.inputStyle3 label input.rdo,.inputStyle3 label input.cbx {
+	/* 默认单选框，多选框样式 */
+	border: none;
+	width: 15px;
+	top: 0;
+}
+
+.inputStyle3 label div.fckInput {
+	width: 99%;
+	min-height: 400px !important;
+	height: auto !important;
+	height: 400px;
+}
+
+/* 输出列表样式 */
+.listStyle {
+	float: left;
+	width: 96%;
+	min-height: 1% !important;
+	height: auto !important;
+	height: 1%;
+	text-align: center;
+	border: 1px solid silver;
+	margin: 1% 1% 0 1% !important;
+	margin: 1% 0.5% 0 0.5%;
+	text-align: center;
+	padding: 1%;
+}
+/*---------------*/
+.listStyle label {
+	line-height: 21px;
+	width: 33.3%;
+	float: left;
+	margin: .4% 0;
+	text-align: left;
+}
+
+.listStyle label span {
+	width: 35.3%;
+	float: left;
+	text-align: right;
+}
+
+.listStyle label input,.inputStyle2 label span.Single
+	{
+	position: relative;
+	vertical-align: top;
+	width: 47%;
+}
+/*---------------*/
+.listStyle fieldset {
+	min-height: 1% !important;
+	height: auto !important;
+	height: 1%;
+}
+
+.listStyle dl,.listStyle dt,.listStyle dd
+{
+  padding:0;
+  float:left;
+  margin:0;
+}
+.listStyle dl {
+	width: 33.1%;
+	border-bottom: none;
+}
+
+.border_bottom {
+	border-bottom: none !important;
+}
+
+.listStyle dt {
+	width: 38%;
+	text-align: right;
+	padding: 4px 0;
+	line-height: 14px;
+}
+
+.listStyle  dd {
+	width: 52%;
+	text-align: left;
+	padding: 4px 3%;
+	line-height: 14px;
+}
+
+.listStyle dl.Triple {
+	width: 99.9%
+}
+
+.Triple dt {
+	width: 12.5%;
+}
+
+.Triple dd {
+	width: 84.7%;
+	padding: 4px 1.3%;
+}
+
+.listStyle dl.Double {
+	width: 66.5%;
+}
+
+.Double dt {
+	width: 14.9%;
+}
+
+.Double dd {
+	width: 76.5%;
+	padding: 4px 2%;
+}
+
+#sidebar1 {
+	width: 138px;
+	min-height: 440px !important;
+	height: auto !important;
+	height: 440px;
+}
+
+div.bcL_Low {
+	padding: 2px;
+	float: left;
+}
+
+div.bcC_Low {
+	padding: 2px;
+	padding-top: 10px;
+}
+.bcC {
+	padding: 2px;
+	padding-top: 10px;
+}
+
+.bcL {
+	padding-top: 2px;
+	float: left;
+	margin-left:0px;
+}
+
+.bcR {
+	widthL:54px;
+	height:19px;
+	padding: 2px;
+	float: right;
+	margin-right: 10px;
+}
+
+.bcL_Low {
+	float: left;
+	margin-left: 10px;
+}
+
+.bcR,.bcR_Low {
+	float: right;
+	margin-right: 10px;
+}
+
+.bargainPanelDiv {
+	width: 98%;
+	margin: .4% .7%;
+	float: left;
+	border: 1px solid #8f97a2;
+	min-height: 1px !important;
+	height: auto !important;
+	height: 1px;
+	background: #fff;
+}
+
+.bargainSeatDiv {
+	float: left;
+	width: 98.8%;
+	padding: 3px .5%;
+	background: url( ../img/table-title.jpg ) top repeat-x;
+	border: 1px solid white;
+	border-bottom: 1px solid #cad1d7;
+}
+
+.bargainRecordDiv {
+	text-indent: 5%;
+	border-bottom: 1px solid #87ceff;
+}
+
+.spanL {
+	width: 25%;
+	float: left;
+	padding: .3% 1%;
+}
+
+.spanC {
+	width: 65%;
+	float: left;
+	padding: .3% 1%;
+}
+
+.spanR {
+	width: 25%;
+	float: left;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.page { /* 分页容器 */
+	width: 95.88%;
+	border: 1px solid silver;
+
+	margin: 0 1% 0 1% !important;
+	margin: 0 0.5% 0 0.5%;
+	background: #f4f6fb;
+	min-height: 1px !important;
+	height: auto !important;
+	height: 1px;
+	float: left;
+	padding: 2px 1%;
+}
+
+.Pleft {
+	float: left;
+	padding: 4px;
+}
+
+.Pright {
+	float: right;
+}
+
+.arrowL,.arrowr {
+	margin-top: -1px;
+	height: 17px;
+	width: 17px;
+	display: inline-block;
+}
+
+.arrowL {
+	background: url( ../img/left.jpg )
+}
+
+.arrowr {
+	background: url( ../img/right.jpg )
+}
+
+.bun_mini_sp {
+	margin: -4px 0 0 15px;
+	font-weight: normal;
+	font-size: 12px;
+	color: #333;
+}
+
+.pageinput {
+	margin: 2px 4px 0 2px;
+	width: 2em;
+	letter-spacing: .1em;
+	text-align: center;
+	font-weight: normal;
+	color: #690;
+}
+
+.titleM { /* 现货超市 头部说明信息栏 */
+	float: left;
+	width: 98.8%;
+	padding: 3px .5%;
+	background: url( ../img/table-title.jpg ) top repeat-x;
+	border: 1px solid white;
+	border-bottom: 1px solid #cad1d7;
+	color: #000000;
+	margin-bottom:10px;
+}
+
+.dist {
+	width: 98%;
+	margin: 1% 1% 0 1%;
+}
+
+.marginR {
+
+	margin-right: 20px;
+}
+
+.marginB {
+	margin-bottom: 15px;
+}
+
+.paddingL {
+	padding-left: 20px;
+    padding-top:10px;
+    padding-bottom: 10px;
+}
+
+.highlight {
+	margin-right: 20px;
+	background-color: yellow;
+}
+
+.fieldset_LOW {
+	float: left;
+	width: 92%;
+	border: 1px solid silver;
+	margin: 1% 1% 0 1% !important;
+	margin: 1% 0.5% 1% 0.5%;
+
+}
+
+.fieldset_LOW label {
+	line-height: 21px;
+	width: 50%;
+	float: left;
+	margin: .4% 0;
+	text-align: left;
+}
+
+.fieldset_LOW span {
+	width: 37%;
+	float: left;
+	text-align: right;
+}
+
+.fieldset_LOW input,.fieldset_LOW textarea,.fieldset_LOW span.Single {
+	position: relative;
+	vertical-align: top;
+	width: 50%;
+}
+.fieldset_LOW select{
+	vertical-align: top;
+	margin:-2px;
+	font-size:12px;
+	border:none;
+}
+.ss{
+  width:100%
+
+}
+fieldset_table{
+float: left;
+	width: 96%;
+	border: 1px solid silver;
+	margin: 1% 1% 0 1% !important;
+	margin: 1% 0.5% 1% 0.5%;
+	padding: 1%;
+}

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+	<data-sources />
+
+	<form-beans>
+		<form-bean name="userForm" type="cn.itcast.bbs.web.struts.forms.UserForm" />
+		<form-bean name="articleForm" type="cn.itcast.bbs.web.struts.forms.ArticleForm" />
+		<form-bean name="attachmentsForm" type="cn.itcast.bbs.web.struts.forms.AttachmentsForm" />
+		<form-bean name="voteForm" type="cn.itcast.bbs.web.struts.forms.VoteForm" />
+		<form-bean name="moderateForm" type="cn.itcast.bbs.web.struts.forms.ModerateForm" />
+	</form-beans>
+
+	<global-exceptions>
+		<!-- 
+			<exception key="itcastPermissionDenied"
+			type="cn.itcast.bbs.exception.runtime.ItcastPermissionDeniedException"
+			path="/exception.do?method=permissionDenied">
+			</exception>
+			<exception key="exception" type="java.lang.Exception" path="/exception.do?method=show"></exception>
+		-->
+	</global-exceptions>
+
+	<global-forwards>
+		<forward name="index" path="/index.do" redirect="true"></forward>
+	</global-forwards>
+
+	<action-mappings>
+
+		<action path="/index" forward="/forum.do?method=list"></action>
+
+		<!-- 异常 -->
+		<action path="/exception" parameter="method">
+			<forward name="show" path="/WEB-INF/pages/exception/show.jsp"></forward>
+			<forward name="permissionDenied" path="/WEB-INF/pages/exception/permissionDenied.jsp"></forward>
+		</action>
+
+		<!-- 版面 -->
+		<action path="/forum" parameter="method">
+			<forward name="list" path="/WEB-INF/pages/forum/front/list.jsp"></forward>
+			<forward name="show" path="/WEB-INF/pages/forum/front/show.jsp"></forward>
+		</action>
+
+		<!-- 用户 -->
+		<action path="/user" parameter="method" name="userForm" scope="request" validate="false">
+			<forward name="register" path="/WEB-INF/pages/user/front/register.jsp"></forward>
+			<forward name="edit" path="/WEB-INF/pages/user/front/edit.jsp"></forward>
+			<forward name="login" path="/WEB-INF/pages/user/front/login.jsp"></forward>
+			<forward name="profile" path="/WEB-INF/pages/user/front/profile.jsp"></forward>
+		</action>
+
+		<!-- 文章 -->
+		<action path="/article" parameter="method" name="articleForm" scope="request" validate="false">
+			<forward name="show" path="/WEB-INF/pages/topic/show.jsp"></forward>
+			<forward name="saveTopic" path="/WEB-INF/pages/topic/save.jsp"></forward>
+			<forward name="saveReply" path="/WEB-INF/pages/reply/save.jsp"></forward>
+			<forward name="showTopic" path="/article.do?method=showTopic" redirect="true"></forward>
+		</action>
+
+		<!-- 附件  -->
+		<action path="/attachment" parameter="method" name="attachmentsForm" scope="request"
+			validate="false">
+			<forward name="add" path="/WEB-INF/pages/attachment/add.jsp"></forward>
+			<forward name="edit" path="/WEB-INF/pages/attachment/edit.jsp"></forward>
+			<forward name="showTopic" path="/article.do?method=showTopic" redirect="true"></forward>
+		</action>
+
+		<!-- 投票 -->
+		<action path="/vote" parameter="method" name="voteForm" scope="request" validate="false">
+			<forward name="add" path="/WEB-INF/pages/vote/add.jsp"></forward>
+			<forward name="edit" path="/WEB-INF/pages/vote/edit.jsp"></forward>
+			<forward name="showTopic" path="/article.do?method=showTopic" redirect="true"></forward>
+		</action>
+
+		<!-- 搜索 -->
+		<action path="/search" parameter="method" name="searchForm" scope="request" validate="false">
+			<forward name="search" path="/WEB-INF/pages/search/front/form.jsp"></forward>
+			<forward name="showResult" path="/WEB-INF/pages/search/front/result.jsp"></forward>
+		</action>
+
+		<!-- 版主文章管理 -->
+		<action path="/moderate" parameter="method" name="moderateForm" scope="request" validate="false">
+			<forward name="topicManage" path="/WEB-INF/pages/moderate/topicManage.jsp" />
+			<forward name="replyManage" path="/WEB-INF/pages/moderate/replyManage.jsp" />
+			<forward name="showForum" path="/forum.do?method=show" redirect="true" />
+			<forward name="showTopic" path="/article.do?method=showTopic" redirect="true" />
+		</action>
+
+	</action-mappings>
+
+	<!-- 由spring 的ioc 容器管理Action实例 -->
+	<controller>
+		<set-property property="processorClass" value="cn.itcast.bbs.web.struts.PrivilegeInterceptorDelegatingRequestProcessor" />
+		<set-property property="nocache" value="true" />
+	</controller>
+
+	<message-resources parameter="cn.itcast.bbs.web.struts.ApplicationResources" />
+
+	<!-- 在程序中用代码添加, 要不然未安装就启动时抛异常 -->
+	<!-- 
+		<plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
+		<set-property property="contextConfigLocation" value="classpath*:beans*.xml" />
+		</plug-in>
+	-->
+
+</struts-config>

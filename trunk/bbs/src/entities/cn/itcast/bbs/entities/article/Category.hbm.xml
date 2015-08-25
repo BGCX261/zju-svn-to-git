@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.itcast.bbs.entities.article">
+	<class name="Category" table="itcast_category">
+		<id name="id" column="id_">
+			<generator class="native" />
+		</id>
+
+		<property name="name" column="name_" length="255" />
+		<property name="order" column="order_" />
+		<set name="forums" inverse="true" order-by="order_ asc" lazy="false">
+			<key column="categoryId_" />
+			<one-to-many class="Forum" />
+		</set>
+	</class>
+</hibernate-mapping>

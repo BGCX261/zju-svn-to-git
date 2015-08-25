@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+                               "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<!--
+	This is the Struts configuration file for the example application,
+	using the proposed new syntax.
+	
+	NOTE:  You would only flesh out the details in the "form-bean"
+	declarations if you had a generator tool that used them to create
+	the corresponding Java classes for you.  Otherwise, you would
+	need only the "form-bean" element itself, with the corresponding
+	"name" and "type" attributes.
+-->
+<struts-config>
+	<form-beans>
+		<form-bean name="menuForm"
+			type="com.jsict.jszju.form.baseform.MenuForm" />
+		<form-bean name="menuForm2"
+			type="com.jsict.platform.form.MenuForm" />
+		<form-bean name="frontHeadForm"
+			type="com.jsict.jszju.form.FrontHeadForm" />
+		<form-bean name="frontHeadListForm"
+			type="com.jsict.jszju.form.FrontHeadListForm" />
+		<form-bean name="indexForm"
+			type="com.jsict.jszju.form.baseform.IndexForm" />
+		<form-bean name="userInfoForm"
+			type="com.jsict.jszju.form.UserInfoForm" />
+		<form-bean name="linkToMainForm"
+			type="com.jsict.jszju.form.baseform.LinkToMainForm" />
+		<form-bean name="linkToViewForm"
+			type="com.jsict.jszju.form.baseform.LinkToViewForm" />
+		<form-bean name="adminInfoForm"
+			type="com.jsict.jszju.form.AdminInfoForm" />
+		<form-bean name="adminIndexForm"
+			type="com.jsict.jszju.form.AdminIndexForm" />
+		<form-bean name="articleContentListForm"
+			type="com.jsict.jszju.form.ArticleContentListForm" />
+		<form-bean name="articleContentForm"
+			type="com.jsict.jszju.form.ArticleContentForm" />
+		<form-bean name="adminInfoResetForm"
+			type="com.jsict.jszju.form.AdminInfoResetListForm" />
+		<form-bean name="commentListForm"
+			type="com.jsict.jszju.form.CommentListForm" />
+		<form-bean name="paychargeListFrom"
+			type="com.jsict.jszju.form.PaychargeListFrom" />
+			
+		<form-bean name="schoolFellowForHelpListForm"
+			type="com.jsict.jszju.form.SchoolFellowForHelpListForm" />
+		<form-bean name="schoolFellowPutInfoListForm"
+			type="com.jsict.jszju.form.SchoolFellowPutInfoListForm" />
+		<form-bean name="schoolFellowForHelpForm"
+			type="com.jsict.jszju.form.SchoolFellowForHelpForm" />
+		<form-bean name="schoolFellowPutInfoForm"
+			type="com.jsict.jszju.form.SchoolFellowPutInfoForm" />
+			
+		<form-bean name="schoolFellowNotesListForm"
+			type="com.jsict.jszju.form.SchoolFellowNotesListForm" />
+		<form-bean name="coreFunctionListForm"
+			type="com.jsict.jszju.form.CoreFunctionListForm" />
+		<form-bean name="fileForm"
+			type="com.jsict.jszju.form.FileForm" />
+		<form-bean name="fileHanderListForm"
+			type="com.jsict.jszju.form.FileHanderListForm" />
+		<form-bean name="excellentsfListForm"
+			type="com.jsict.jszju.form.ExcellentsfListForm" />
+	</form-beans>
+
+	<action-mappings>
+		<action path="/ini" forward="/WEB-INF/jsp/index.jsp" />
+		<action path="/adminLogin"
+			forward="/WEB-INF/jsp/admininfo/login.jsp" />
+
+		<action path="/menu" name="menuForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			validate="false" input="/WEB-INF/jsp/head.jsp" />
+		<action path="/index" name="indexForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			validate="false" input="/WEB-INF/jsp/index.jsp">
+			<forward name="head" path="/WEB-INF/jsp/head.jsp" />
+			<forward name="main" path="/WEB-INF/jsp/main.jsp" />
+			<forward name="foot" path="/WEB-INF/jsp/foot.jsp" />
+		</action>
+		
+		<action path="/comment" name="commentListForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			validate="false" input="/WEB-INF/jsp/comment.jsp">
+			<forward name="comment" path="/WEB-INF/jsp/comment.jsp" />
+			<forward name="commentsuccess" path="/WEB-INF/jsp/commentsuccess.jsp" />
+			<forward name="commentview" path="/WEB-INF/jsp/commentview.jsp" />
+		</action>
+		<action path="/schoolfellowinfocommit" name="schoolFellowForHelpListForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			validate="false" input="/WEB-INF/jsp/frontjsp/successcommitinfo.jsp">
+			<forward name="errorlogin"
+				path="/WEB-INF/jsp/userLoginError.jsp" />
+			<forward name="forhelplist"
+				path="/WEB-INF/jsp/frontjsp/schoolfellowforhelplist.jsp" />
+			<forward name="edit"
+				path="/WEB-INF/jsp/frontjsp/schoolfellowforhelpedit.jsp" />
+			<forward name="backtolisk"
+				path="/schoolfellowinfocommit.do?actionType=forhelplist" />
+			<forward name="view"
+				path="/WEB-INF/jsp/frontjsp/schollfellowforhelpview.jsp" />
+			<forward name="consultview"
+				path="/WEB-INF/jsp/frontjsp/schoolfellowconsultview.jsp" />
+			<forward name="viewallinfo"
+				path="/WEB-INF/jsp/frontjsp/schoolfellowallinfoview.jsp" />
+			<forward name="viewallconsult"
+				path="/WEB-INF/jsp/frontjsp/schoolfellowallconsultview.jsp" />
+			<forward name="viewallinfo2"
+				path="/WEB-INF/jsp/frontjsp/schoolfellowallinfoview2.jsp" />
+			<forward name="viewallconsult2"
+				path="/WEB-INF/jsp/frontjsp/schoolfellowallconsultview2.jsp" />
+			<forward name="nopopedom"
+				path="/WEB-INF/jsp/admininfo/adminmanagenopopedom.jsp" />
+		</action>
+		<action path="/schoolfellowinforhelp" name="schoolFellowPutInfoListForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			validate="false" input="/WEB-INF/jsp/frontjsp/successcommitinfo.jsp">
+			<forward name="errorlogin"
+				path="/WEB-INF/jsp/userLoginError.jsp" />
+			<forward name="consultlist"
+				path="/WEB-INF/jsp/frontjsp/schoolfellowconsultlist.jsp" />
+			<forward name="edit"
+				path="/WEB-INF/jsp/frontjsp/schoolfellowconsultedit.jsp" />
+			<forward name="backtolisk"
+				path="/schoolfellowinforhelp.do?actionType=consultlist" />
+			<forward name="nopopedom"
+				path="/WEB-INF/jsp/admininfo/adminmanagenopopedom.jsp" />
+		</action>
+		<!-- 屏蔽测试
+			<action path="/userinfoSaveAction" name="userInfoForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			validate="false" input="/WEB-INF/jsp/welcome.jsp">
+			<forward name="success" path="/WEB-INF/jsp/welcome.jsp"></forward>
+			<forward name="save" path="/WEB-INF/jsp/save.jsp"></forward>
+			</action>
+		-->
+
+		<action path="/userLogin" name="userInfoForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			validate="false" input="/WEB-INF/jsp/userLogin.jsp">
+			<forward name="success"
+				path="/WEB-INF/jsp/userLoginSuccess.jsp">
+			</forward>
+			<forward name="error"
+				path="/WEB-INF/jsp/userLoginError.jsp">
+			</forward>
+			<forward name="register"
+				path="/WEB-INF/jsp/registerInput.jsp">
+			</forward>
+			<forward name="registercommit"
+				path="/WEB-INF/jsp/registerSuccess.jsp">
+			</forward>
+			<forward name="logout"
+				path="/WEB-INF/jsp/userLogin.jsp">
+			</forward>
+			<forward name="codeError" path="/WEB-INF/jsp/checkCodeError.jsp"></forward>
+			<forward name="list" path="/WEB-INF/jsp/admininfo/resourcemanage/memberManageRight.jsp"></forward>
+			<forward name="edit" path="/WEB-INF/jsp/admininfo/resourcemanage/memberManageEdit.jsp"></forward>
+			<forward name="listview" path="/userLogin.do?actionType=list"></forward>
+			<forward name="nopopedom"
+				path="/WEB-INF/jsp/admininfo/adminmanagenopopedom.jsp" />
+			
+		</action>
+
+		<action path="/linkToMain" name="linkToMainForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			validate="false" input="/WEB-INF/jsp/main.jsp">
+			<forward name="firstpage"
+				path="/acticleContentMenu.do?actionType=firstpage">
+			</forward>
+			<forward name="dynamic"
+				path="/acticleContentMenu.do?actionType=dynamic">
+			</forward>
+			<forward name="file"
+				path="/acticleContentMenu.do?actionType=file">
+			</forward>
+			<forward name="zjucommu"
+				path="/acticleContentMenu.do?actionType=zjucommu">
+			</forward>
+			<forward name="pic"
+				path="/acticleContentMenu.do?actionType=pic">
+			</forward>
+			<forward name="subzju"
+				path="/acticleContentMenu.do?actionType=subzju">
+			</forward>
+			<forward name="memberhome"
+				path="/acticleContentMenu.do?actionType=memberhome">
+			</forward>
+
+			<forward name="picture"
+				path="/acticleContentMenu.do?actionType=picture">
+			</forward>
+			<forward name="video"
+				path="/acticleContentMenu.do?actionType=video">
+			</forward>
+			<forward name="oldzjuer"
+				path="/acticleContentMenu.do?actionType=oldzjuer">
+			</forward>
+			<forward name="youngzjuer"
+				path="/acticleContentMenu.do?actionType=youngzjuer">
+			</forward>
+			<forward name="medical"
+				path="/acticleContentMenu.do?actionType=medical">
+			</forward>
+			<forward name="viewindex"
+				path="/WEB-INF/jsp/view.jsp">
+			</forward>
+			
+			<forward name="error"
+				path="/WEB-INF/jsp/userLoginError.jsp">
+			</forward>
+			<forward name="putoutconsult"
+				path="/WEB-INF/jsp/frontjsp/schoolfellowconsult.jsp">
+			</forward>
+			<forward name="putoutprojectinfo"
+				path="/WEB-INF/jsp/frontjsp/schollfellowforhelp.jsp">
+			</forward>
+			<forward name="nologin"
+				path="/WEB-INF/jsp/userLogin.jsp">
+			</forward>
+		</action>
+
+		<action path="/linkToView" name="linkToViewForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			validate="false" input="/WEB-INF/jsp/welcome.jsp">
+			<forward name="success" path="/WEB-INF/jsp/viewIndex.jsp"></forward>
+			<forward name="nologin"
+				path="/WEB-INF/jsp/logoutUserLogin.jsp">
+			</forward>
+		</action>
+		
+		<action path="/viewAllArticle" name="articleContentListForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			validate="false" input="/WEB-INF/jsp/welcome.jsp">
+			<forward name="goto" path="/WEB-INF/jsp/frontjsp/viewAllArticleGoTo.jsp"></forward>
+			<forward name="view" path="/WEB-INF/jsp/frontjsp/viewAllArticle.jsp"></forward>
+		</action>
+		
+		<action path="/schoolFellowNotes" name="schoolFellowNotesListForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			validate="false" input="/WEB-INF/jsp/frontjsp/schoolfellownoteslist.jsp">
+			<forward name="edit" path="/WEB-INF/jsp/frontjsp/schoolfellownotesedit.jsp"></forward>
+			<forward name="view" path="/WEB-INF/jsp/frontjsp/schoolfellownotesview.jsp"></forward>
+			<forward name="backtolisk" path="/schoolFellowNotes.do?actionType=notes"></forward>
+			<forward name="front" path="/WEB-INF/jsp/frontjsp/schoolfellownotesfrontview.jsp"></forward>
+			<forward name="allnotes" path="/WEB-INF/jsp/frontjsp/schoolfellowallnotesview.jsp"></forward>
+			<forward name="viewallnotes" path="/WEB-INF/jsp/frontjsp/schoolfellowallnotesview2.jsp"></forward>
+			<forward name="nopopedom"
+				path="/WEB-INF/jsp/admininfo/adminmanagenopopedom.jsp" />
+		</action>
+		
+		<!-- 后台管理相关action Begin-->
+		<action path="/adminInfoSubmit" name="adminInfoForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			validate="false" input="/WEB-INF/jsp/admininfo/login.jsp">
+			<forward name="right"
+				path="/WEB-INF/jsp/admininfo/adminManage.jsp" />
+			<forward name="adminLogout"
+				path="/WEB-INF/jsp/admininfo/adminManage.jsp" />
+			<forward name="error"
+				path="/WEB-INF/jsp/admininfo/loginError.jsp" />
+		</action>
+		
+		<action path="/admininfoRef" name="adminInfoForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			validate="false"
+			input="/WEB-INF/jsp/admininfo/admininfoEdit.jsp">
+			<forward name="list"
+				path="/coreFunction.do?actionType=adminRoleManage" />
+			<forward name="edit"
+				path="/WEB-INF/jsp/admininfo/admininfoEdit.jsp" />
+			<forward name="cancel"
+				path="/coreFunction.do?actionType=adminRoleManage" />
+		</action>
+
+		<action path="/resetAdminPsw" name="adminInfoResetForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			validate="false"
+			input="/WEB-INF/jsp/admininfo/adminSelfInfoView.jsp">
+			<forward name="oldpswerror"
+				path="/WEB-INF/jsp/admininfo/loginError.jsp" />
+			<forward name="list"
+				path="/WEB-INF/jsp/admininfo/admininfoList.jsp" />
+			<forward name="nopopedom"
+				path="/WEB-INF/jsp/admininfo/adminmanagenopopedom.jsp" />
+		</action>
+
+		<action path="/adminArticleContent" name="adminIndexForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			validate="false" input="/WEB-INF/jsp/admininfo/adminWelcome.jsp">
+			<forward name="ini"
+				path="/WEB-INF/jsp/admininfo/adminMain.jsp" />
+			<forward name="articleColumn"
+				path="/WEB-INF/jsp/admininfo/articleColumn.jsp" />
+			<forward name="articleContent"
+				path="/WEB-INF/jsp/admininfo/article_sys/adminArticleMain.jsp" />
+			<forward name="resourcemanage"
+				path="/WEB-INF/jsp/admininfo/resourcemanage/resourceManageMain.jsp" />
+			<forward name="corefunction"
+				path="/WEB-INF/jsp/admininfo/resourcemanage/coreFunctionMain.jsp" />
+		</action>
+
+		<action path="/adminIndex" name="adminIndexForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			validate="false" input="/WEB-INF/jsp/admininfo/adminWelcome.jsp">
+			<forward name="left"
+				path="/WEB-INF/jsp/admininfo/adminIndexLeft.jsp" />
+			<forward name="right"
+				path="/WEB-INF/jsp/admininfo/adminIndexRight.jsp" />
+		</action>
+
+		<action path="/adminArticle" name="adminIndexForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			validate="false" input="/WEB-INF/jsp/admininfo/adminWelcome.jsp">
+			<forward name="left" path="/acticleContentMenu.do" />
+			<forward name="right"
+				path="/WEB-INF/jsp/admininfo/article_sys/rightTest.jsp" />
+			<forward name="resourceleft"
+				path="/WEB-INF/jsp/admininfo/resourcemanage/resourceLeft.jsp" />
+			<forward name="resourceright"
+				path="/WEB-INF/jsp/admininfo/resourcemanage/payCharge.jsp" />
+			<forward name="corefunctionleft"
+				path="/WEB-INF/jsp/admininfo/resourcemanage/coreFunctionLeft.jsp" />
+			<forward name="corefunctionright"
+				path="/WEB-INF/jsp/admininfo/resourcemanage/coreFunction.jsp" />
+		</action>
+				
+		<action path="/resourcemanage" name="paychargeListFrom"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			validate="false" input="/WEB-INF/jsp/admininfo/adminWelcome.jsp">
+			<forward name="payCharge" path="/WEB-INF/jsp/admininfo/resourcemanage/resourceRight.jsp" />
+			<forward name="new"
+				path="/resourcemanageEdit.do?actionType=new" />
+			<forward name="backtolisk" path="/resourcemanage.do?actionType=payCharge" />
+			<forward name="endow"
+				path="/WEB-INF/jsp/endow.jsp">
+			</forward>
+			<forward name="pic" path="/WEB-INF/jsp/admininfo/resourcemanage/pic.jsp"/>
+			<forward name="uploadpic" path="/WEB-INF/jsp/upload/file.jsp"/>
+			<forward name="nopopedom"
+				path="/WEB-INF/jsp/admininfo/adminmanagenopopedom.jsp" />
+		</action>
+		<action path="/coreFunction" name="coreFunctionListForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			validate="false" input="/WEB-INF/jsp/admininfo/adminWelcome.jsp">
+			<forward name="memberManage" path="/userLogin.do?actionType=list" />
+			<forward name="adminRoleManage" path="/resetAdminPsw.do?actionType=list" />
+		</action>
+		  <action  path="/file" attribute="fileForm"  input="/WEB-INF/jsp/upload/file.jsp"  name="fileForm"   
+		  type="org.springframework.web.struts.DelegatingActionProxy" validate="false">   
+       		<forward name="success" path="/WEB-INF/jsp/upload/succ.jsp"></forward>   
+      	  </action>
+      	   <action  path="/fileView"  input="/WEB-INF/jsp/upload/picedit.jsp"  
+      	   name="fileHanderListForm"   type="org.springframework.web.struts.DelegatingActionProxy" validate="false">   
+       		<forward name="sfview" path="/WEB-INF/jsp/frontjsp/schoolfellowpicview.jsp"></forward>   
+       		<forward name="focusview" path="/WEB-INF/jsp/frontjsp/schoolfellowfocusview.jsp"></forward>  
+       		<forward name="picedit" path="/WEB-INF/jsp/upload/piclist.jsp"/>
+       		<forward name="picview" path="/WEB-INF/jsp/upload/picview.jsp"/>
+       		<forward name="viewpiccontent" path="/WEB-INF/jsp/upload/piccontentview.jsp"/>
+       		<forward name="viewpiccontent2" path="/WEB-INF/jsp/upload/piccontentview2.jsp"/>
+       		<forward name="nopopedom"
+				path="/WEB-INF/jsp/admininfo/adminmanagenopopedom.jsp" />
+      	  </action>
+		
+		<action path="/resourcemanageEdit" name="paychargeListFrom"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			validate="false" input="/WEB-INF/jsp/admininfo/resourcemanage/payChargeAddEdit.jsp">
+			<forward name="backtolisk" path="/resourcemanage.do?actionType=payCharge" />
+		</action>
+				
+		<action path="/acticleContentMenu" name="menuForm2"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			validate="false"
+			input="/WEB-INF/jsp/admininfo/article_sys/adminArticleLeft.jsp">
+			<forward name="dynamic"
+				path="/dynamicAction.do?actionType=dynamic" /><!-- 见 前台head页面菜单对应处理action Begin-->
+			<forward name="file"
+				path="/dynamicAction.do?actionType=file" />
+			<forward name="zjucommu"
+				path="/dynamicAction.do?actionType=zjucommu" />
+			<forward name="pic" path="/dynamicAction.do?actionType=pic" />
+			<forward name="subzju"
+				path="/dynamicAction.do?actionType=subzju" />
+			<forward name="memberhome"
+				path="/dynamicAction.do?actionType=memberhome" />
+			<forward name="firstpage"
+				path="/dynamicAction.do?actionType=firstpage" />
+
+			<forward name="picture"
+				path="/dynamicAction.do?actionType=picture">
+			</forward>
+			<forward name="video"
+				path="/dynamicAction.do?actionType=video">
+			</forward>
+			<forward name="oldzjuer"
+				path="/dynamicAction.do?actionType=oldzjuer">
+			</forward>
+			<forward name="youngzjuer"
+				path="/dynamicAction.do?actionType=youngzjuer">
+			</forward>
+			<forward name="medical"
+				path="/dynamicAction.do?actionType=medical">
+			</forward>
+		</action>
+
+		<action path="/ArticleContentEdit" name="articleContentListForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			validate="false"
+			input="/WEB-INF/jsp/admininfo/article_sys/rightTest.jsp">
+			<forward name="jszuaaNews"
+				path="/WEB-INF/jsp/admininfo/article_sys/adminArticleJszuaaNews.jsp" />
+			<forward name="zjuNews"
+				path="/WEB-INF/jsp/admininfo/article_sys/adminArticleZjuNews.jsp" />
+			<forward name="zuaaNews"
+				path="/WEB-INF/jsp/admininfo/article_sys/adminArticleZuaaNews.jsp" />
+			<forward name="othzuaaNews"
+				path="/WEB-INF/jsp/admininfo/article_sys/adminArticleOthzuaaNews.jsp" />
+			<forward name="zuaaFiles"
+				path="/WEB-INF/jsp/admininfo/article_sys/menu_jsp/adminArticleZuaaFiles.jsp" />
+			<forward name="jszuaaFiles"
+				path="/WEB-INF/jsp/admininfo/article_sys/menu_jsp/adminArticleJszuaaFiles.jsp" />
+			<forward name="zuaaCommu"
+				path="/WEB-INF/jsp/admininfo/article_sys/menu_jsp/adminArticlezuaaCommu.jsp" />
+			<forward name="jszuaaCommu"
+				path="/WEB-INF/jsp/admininfo/article_sys/menu_jsp/adminArticlejszuaaCommu.jsp" />
+			<forward name="othFile"
+				path="/WEB-INF/jsp/admininfo/article_sys/menu_jsp/adminArticleothFile.jsp" />
+			<forward name="enjoyWriting"
+				path="/WEB-INF/jsp/admininfo/article_sys/menu_jsp/adminArticleenjoyWriting.jsp" />
+			<forward name="successWay"
+				path="/WEB-INF/jsp/admininfo/article_sys/menu_jsp/adminArticlesuccessWay.jsp" />
+			<forward name="talentHunting"
+				path="/WEB-INF/jsp/admininfo/article_sys/menu_jsp/adminArticletalentHunting.jsp" />
+			<forward name="jobHunting"
+				path="/WEB-INF/jsp/admininfo/article_sys/menu_jsp/adminArticlejobHunting.jsp" />
+			<forward name="picFiles"
+				path="/WEB-INF/jsp/admininfo/article_sys/menu_jsp/adminArticlepicFiles.jsp" />
+			<forward name="videoFiles"
+				path="/WEB-INF/jsp/admininfo/article_sys/menu_jsp/adminArticlevideoFiles.jsp" />
+			<forward name="oldBranch"
+				path="/WEB-INF/jsp/admininfo/article_sys/menu_jsp/adminArticleoldBranch.jsp" />
+			<forward name="yongBranch"
+				path="/WEB-INF/jsp/admininfo/article_sys/menu_jsp/adminArticleyongBranch.jsp" />
+			<forward name="medBranch"
+				path="/WEB-INF/jsp/admininfo/article_sys/menu_jsp/adminArticlemedBranch.jsp" />
+			<forward name="activitiesDynamic"
+				path="/WEB-INF/jsp/admininfo/article_sys/menu_jsp/adminArticleactivitiesDynamic.jsp" />
+			<forward name="talkForetime"
+				path="/WEB-INF/jsp/admininfo/article_sys/menu_jsp/adminArticletalkForetime.jsp" />
+			<forward name="exercise"
+				path="/WEB-INF/jsp/admininfo/article_sys/menu_jsp/adminArticleexercise.jsp" />
+			<forward name="oldEnjoy"
+				path="/WEB-INF/jsp/admininfo/article_sys/menu_jsp/adminArticleoldEnjoy.jsp" />
+			<forward name="mienAlso"
+				path="/WEB-INF/jsp/admininfo/article_sys/menu_jsp/adminArticlemienAlso.jsp" />
+			<forward name="consultHelp"
+				path="/WEB-INF/jsp/admininfo/article_sys/menu_jsp/adminArticleconsultHelp.jsp" />
+			<forward name="activitiesCover"
+				path="/WEB-INF/jsp/admininfo/article_sys/menu_jsp/adminArticleactivitiesCover.jsp" />
+			<forward name="activitiesPic"
+				path="/WEB-INF/jsp/admininfo/article_sys/menu_jsp/adminArticleactivitiesPic.jsp" />
+			<forward name="intrestingActivities"
+				path="/WEB-INF/jsp/admininfo/article_sys/menu_jsp/adminArticleintrestingActivities.jsp" />
+			<forward name="fashionLife"
+				path="/WEB-INF/jsp/admininfo/article_sys/menu_jsp/adminArticlefashionLife.jsp" />
+			<forward name="successRoad"
+				path="/WEB-INF/jsp/admininfo/article_sys/menu_jsp/adminArticlesuccessRoad.jsp" />
+			<forward name="yong"
+				path="/WEB-INF/jsp/admininfo/article_sys/menu_jsp/adminArticleyong.jsp" />
+			<forward name="bookClub"
+				path="/WEB-INF/jsp/admininfo/article_sys/menu_jsp/adminArticlebookClub.jsp" />
+			<forward name="carClub"
+				path="/WEB-INF/jsp/admininfo/article_sys/menu_jsp/adminArticlecarClub.jsp" />
+			<forward name="sportsClub"
+				path="/WEB-INF/jsp/admininfo/article_sys/menu_jsp/adminArticlesportsClub.jsp" />
+			<forward name="entertainmentClub"
+				path="/WEB-INF/jsp/admininfo/article_sys/menu_jsp/adminArticleentertainment.jsp" />
+			<forward name="leisureFood"
+				path="/WEB-INF/jsp/admininfo/article_sys/menu_jsp/adminArticleleisureFood.jsp" />
+			<forward name="marriage"
+				path="/WEB-INF/jsp/admininfo/article_sys/menu_jsp/adminArticlemarriage.jsp" />
+			<forward name="carrerHelp"
+				path="/WEB-INF/jsp/admininfo/article_sys/menu_jsp/adminArticlecarrerHelp.jsp" />
+			<forward name="memberService"
+				path="/WEB-INF/jsp/admininfo/article_sys/menu_jsp/adminArticlememberService.jsp" />
+			
+			<forward name="MactivtiesCover"
+				path="/WEB-INF/jsp/admininfo/article_sys/menu_jsp/adminArticleMactivtiesCover.jsp" />
+			<forward name="MactivitiesPic"
+				path="/WEB-INF/jsp/admininfo/article_sys/menu_jsp/adminArticleMactivitiesPic.jsp" />
+			<forward name="Mmethod"
+				path="/WEB-INF/jsp/admininfo/article_sys/menu_jsp/adminArticleMmethod.jsp" />
+				
+			<forward name="Mservice"
+				path="/WEB-INF/jsp/admininfo/article_sys/menu_jsp/adminArticleMservice.jsp" />
+			<forward name="Msuccess"
+				path="/WEB-INF/jsp/admininfo/article_sys/menu_jsp/adminArticleMsuccess.jsp" />
+			<forward name="Mmedical"
+				path="/WEB-INF/jsp/admininfo/article_sys/menu_jsp/adminArticleMmedical.jsp" />
+				
+				
+
+			<forward name="view"
+				path="/WEB-INF/jsp/admininfo/article_sys/adminArticleJszuaaNewsView.jsp" />
+			<forward name="new"
+				path="/ArticleContentAddEdit.do?actionType=new" />
+			<forward name="edit"
+				path="/ArticleContentAddEdit.do?actionType=edit" />
+			<forward name="cancel"
+				path="/WEB-INF/jsp/admininfo/article_sys/adminArticleJszuaaNews.jsp" />
+				
+			<forward name="nopopedom"
+				path="/WEB-INF/jsp/admininfo/adminmanagenopopedom.jsp" />
+		</action>
+
+		<action path="/ArticleContentAddEdit" name="articleContentForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			validate="false"
+			input="/WEB-INF/jsp/admininfo/article_sys/adminArticleJszuaaNewsAddEdit.jsp">
+			<forward name="new"
+				path="/ArticleContentAddEdit.do?actionType=new" />
+			<forward name="view"
+				path="/WEB-INF/jsp/admininfo/article_sys/adminArticleJszuaaNewsView.jsp" />
+			<forward name="cancel"
+				path="/WEB-INF/jsp/admininfo/article_sys/adminArticleJszuaaNews.jsp" />
+			<forward name="jszuaaNews"
+				path="/ArticleContentEdit.do?actionType=jszuaaNews" />
+		</action>
+
+		<action path="/acticleAdd"
+			forward="/WEB-INF/jsp/admininfo/article_sys/articleAdd.jsp" />
+
+		<!-- 后台管理相关action End -->
+
+		<!-- 前台head页面菜单对应处理action Begin -->
+		<action path="/dynamicAction" name="frontHeadListForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			validate="false" input="/WEB-INF/jsp/dynamicinfo.jsp">
+			<forward name="dynamic" path="/WEB-INF/jsp/dynamicinfo.jsp" />
+			<forward name="file"
+				path="/WEB-INF/jsp/filecommunication.jsp" />
+			<forward name="zjucommu"
+				path="/WEB-INF/jsp/zjuercommunion.jsp">
+			</forward>
+			<forward name="pic" path="/WEB-INF/jsp/picfilm.jsp"></forward>
+			<forward name="subzju" path="/WEB-INF/jsp/subzjuwin.jsp"></forward>
+			<forward name="memberhome"
+				path="/WEB-INF/jsp/memberhome.jsp" />
+			<forward name="firstpage" path="/WEB-INF/jsp/main.jsp">
+			</forward>
+
+			<forward name="picture" path="/WEB-INF/jsp/picture.jsp"></forward>
+			<forward name="video" path="/WEB-INF/jsp/video.jsp"></forward>
+			<forward name="oldzjuer" path="/WEB-INF/jsp/oldzjuer.jsp"></forward>
+			<forward name="youngzjuer"
+				path="/WEB-INF/jsp/youngzjuer.jsp">
+			</forward>
+			<forward name="medical" path="/WEB-INF/jsp/medical.jsp"></forward>
+		</action>
+
+		<!-- 前台head页面菜单对应处理action End -->
+		<action path="/excellentsf" name="excellentsfListForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			validate="false"
+			input="/WEB-INF/jsp/admininfo/article_sys/adminArticleJszuaaNewsAddEdit.jsp">
+			<forward name="view"
+				path="/WEB-INF/jsp/frontjsp/excellentsffront.jsp" />
+		</action>
+
+	</action-mappings>
+		<message-resources
+		parameter="org.apache.struts.webapp.validator.ApplicationResources" />
+
+	<plug-in
+		className="org.springframework.web.struts.ContextLoaderPlugIn">
+		<set-property property="contextConfigLocation"
+			value="classpath:springConfig/springStruts.xml" />
+	</plug-in>
+
+</struts-config>

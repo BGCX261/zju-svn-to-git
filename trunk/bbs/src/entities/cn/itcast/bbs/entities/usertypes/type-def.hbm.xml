@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.itcast.bbs.entities.privilege">
+	<typedef name="sexEnumType" class="cn.itcast.bbs.entities.usertypes.EnumType">
+		<param name="enumClassName">cn.itcast.bbs.entities.Sex</param>
+	</typedef>
+	<typedef name="topicTypeEnumType" class="cn.itcast.bbs.entities.usertypes.EnumType">
+		<param name="enumClassName">cn.itcast.bbs.entities.article.Topic$TopicType</param>
+	</typedef>
+	<typedef name="topicStatusEnumType" class="cn.itcast.bbs.entities.usertypes.EnumType">
+		<param name="enumClassName">cn.itcast.bbs.entities.article.Topic$TopicStatus</param>
+	</typedef>
+	<typedef name="actionEnumType" class="cn.itcast.bbs.entities.usertypes.EnumType">
+		<param name="enumClassName">cn.itcast.bbs.entities.privilege.Action</param>
+	</typedef>
+	<typedef name="resourceEnumType" class="cn.itcast.bbs.entities.usertypes.EnumType">
+		<param name="enumClassName">cn.itcast.bbs.entities.privilege.Resource</param>
+	</typedef>
+	<typedef name="operationLogEnumType" class="cn.itcast.bbs.entities.usertypes.EnumType">
+		<param name="enumClassName">cn.itcast.bbs.entities.log.OperationLog</param>
+	</typedef>
+</hibernate-mapping>

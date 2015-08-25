@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.itcast.bbs.entities">
+	<class name="User" table="itcast_user">
+		<id name="id" column="id_">
+			<generator class="native" />
+		</id>
+
+		<property name="loginName" column="loginName_" length="64" />
+		<property name="password" column="password_" length="45" />
+		<property name="email" column="email_" length="64" />
+		<property name="active" column="active_" />
+		<property name="deleted" column="deleted_" />
+		<property name="registrationTime" column="registrationTime_" type="timestamp" />
+		<property name="lastVisitTime" column="lastVisitTime_" type="timestamp" />
+		<property name="lastVisitIpAddr" column="lastVisitIpAddr_" />
+		<property name="autoLoginAuthKey" column="autoLoginAuthKey_" length="45" />
+		<property name="activationKey" column="activationKey_" length="45" />
+		<property name="topicCount" column="topicCount_" />
+		<property name="articleCount" column="articleCount_" />
+		<set name="groups" lazy="false" table="itcast_usersgroups">
+			<key column="userId_" />
+			<many-to-many class="cn.itcast.bbs.entities.privilege.Group"  column="groupId_" />
+		</set>
+
+		<property name="nickname" column="nickname_" length="64" />
+		<property name="sex" column="sexName_" type="sexEnumType"/>
+		<property name="birthday" column="birthday_" />
+		<property name="avatar" column="avatar_" length="512000" />
+
+		<property name="qq" column="qq_" length="15" />
+		<property name="msn" column="msn_" length="64" />
+		<property name="comeFrom" column="comeFrom_" length="255" />
+		<property name="signature" column="signature_" length="512" />
+		<property name="realname" column="realname_" length="30" />
+		<property name="cellphone" column="cellphone_" length="30" />
+		<property name="major" column="major_" length="50" />
+		<property name="graduyear" column="graduyear_" length="10" />
+		<property name="number" column="number_" length="50" />
+		<property name="education" column="education_" length="30" />
+		<property name="title" column="title_" length="50" />
+		<property name="birthplace" column="birthplace_" length="255" />
+		<property name="address" column="address_" length="255" />
+		<property name="postcode" column="postcode_" length="10" />
+		<property name="marriage" column="marriage_" length="10" />
+		<property name="car" column="car_" length="20" />
+		<property name="speciality" column="speciality_" length="512" />
+		<property name="resource" column="resource_" length="512" />
+		<property name="advice" column="advice_" length="512" />
+		<property name="activitypoint" column="activitypoint_" length="10" />
+		<property name="memberid" column="memberid_" length="20" />
+	</class>
+</hibernate-mapping>

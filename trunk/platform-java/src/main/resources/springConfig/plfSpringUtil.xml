@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"	
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+	
+	
+	<bean id="plfCodeBookProvider"
+		class="com.jsict.base.util.codebook.CodeBookProvider">
+		<property name="codeBookDaos">
+			<list>
+				<ref bean="plfCodeBookDao" />
+			</list>
+		</property>
+
+	</bean>
+
+	<bean id="plfCodeBookHelper"
+		class="com.jsict.base.util.codebook.CodeBookHelper">
+		<property name="codeBookProvider" ref="plfCodeBookProvider" />
+	</bean>
+	
+	<bean id="permissionsKeyHelper" class="com.jsict.platform.util.PermissionsKeyHelper" init-method="init">
+		<property name="permissionKeyClass" value="com.jsict.platform.constants.PermissionsConsts"></property>
+	<property name="roleKeyClass" value="com.jsict.platform.constants.RolesConsts"></property>
+	
+	</bean>
+
+	<bean id="passwordGenerator"
+		class="com.jsict.platform.util.PasswordGenerator">
+		<property name="defaultPassword" value="654321"></property>
+	</bean>
+
+	<!-- java mail -->
+	<bean id="mailManager" class="com.jsict.base.util.MailManager">
+		<property name="mailSender" ref="mailSender"></property>
+		
+	</bean>
+
+	 <bean id="mailSender"
+		class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host">
+			<value>smtp.gmail.com</value>
+		</property>
+		<property name="username">
+			<value>wuxixizhan@gmail.com</value>
+		</property>
+		<property name="password">
+			<value><![CDATA[!@#$%^&*]]></value>
+		</property>
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.timeout">25000</prop>
+				<prop key="mail.smtp.port">465</prop>
+				<prop key="mail.debug">true</prop>
+				<prop key="mail.smtp.socketFactory.port">465</prop>
+				<prop key="mail.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</prop>
+				<prop key="mail.smtp.socketFactory.fallback">false</prop>
+			</props>
+		</property>
+	</bean>
+	<!-- 
+	<bean id="mailSender"
+		class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host">
+			<value>smtp.yeah.net</value>
+		</property>
+		<property name="username">
+			<value>wuxixizhan</value>
+		</property>
+		<property name="password">
+			<value><![CDATA[123456]]></value>
+		</property>
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.timeout">25000</prop>
+				<prop key="mail.debug">true</prop>
+			</props>
+		</property>
+	</bean> -->
+
+	<bean id="userDwrBean" class="com.jsict.platform.dwr.UserDwrBean">
+	<property name="userService" ref="userService"></property>
+	</bean>
+
+	<bean id="permissionDwrBean" class="com.jsict.platform.dwr.PermissionDwrBean">
+	<property name="authorizationService" ref="authorizationService"></property>
+	</bean>
+	
+	<bean id="messagesDwrBean" class="com.jsict.platform.dwr.MessagesDwrBean">
+	<property name="messagesService" ref="messagesService"></property>
+	<property name="captchaService" ref="captchaSrv"></property>
+	</bean>
+	
+	<bean id="captchaSrv"
+		class="com.jsict.base.util.captcha.CaptchaService">
+	</bean>
+	<!-- caie begin -->
+	<bean id="springContextUtil" class="com.jsict.base.util.SpringContextUtil" />
+	<!-- caie end -->
+</beans>

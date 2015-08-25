@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-2.0.1.xsd">
+
+	<bean id="businessLogService"
+		class="com.jsict.platform.service.bean.BusinessLogService">
+		<property name="businessLogRepository"
+			ref="businessLogRepository">
+		</property>
+	</bean>
+
+	<bean id="companyService"
+		class="com.jsict.platform.service.bean.CompanyService">
+		<property name="companyRepository" ref="companyRepository"></property>
+		<property name="userAccountRepository" ref="userAccountRepository"></property>
+	</bean>
+	<bean id="userService"
+		class="com.jsict.platform.service.bean.UserService">
+		<property name="userAccountRepository"
+			ref="userAccountRepository">
+		</property>
+		<property name="userProfileRepository"
+			ref="userProfileRepository">
+		</property>
+		<property name="companyRepository" ref="companyRepository" />
+		<property name="mailManager" ref="mailManager"></property>
+		<property name="passwordEncoder" ref="passwordEncoder"></property>
+		<property name="passwordGenerator" ref="passwordGenerator"></property>
+		<property name="subsystemRepository" ref="subsystemRepository"></property>
+	</bean>
+	<bean id="authorizationService"
+		class="com.jsict.platform.service.bean.AuthorizationService">
+		<property name="permissionRepository"
+			ref="permissionRepository">
+		</property>
+		<property name="roleRepository" ref="roleRepository" />
+		<property name="userAccountRepository"
+			ref="userAccountRepository" />
+		<property name="subsystemRepository" ref="subsystemRepository"></property>
+	</bean>
+
+	<bean id="baseLoginService" class="com.jsict.platform.security.LoginService">
+		<property name="permissionRepository" ref="permissionRepository"/>
+		<property name="userAccountRepository" ref="userAccountRepository"/>
+	</bean>
+	
+	<bean id="messagesService" class="com.jsict.platform.service.bean.MessagesService">
+		<property name="messagesRepository" ref="messagesRepository"/>
+		<property name="userService" ref="userService"></property>
+		<property name="userAccountRepository" ref="userAccountRepository"></property>
+	</bean>
+</beans>

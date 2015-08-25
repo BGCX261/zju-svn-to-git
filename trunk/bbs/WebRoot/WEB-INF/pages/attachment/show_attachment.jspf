@@ -1,0 +1,31 @@
+<%@ page language="java" pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="html" uri="http://struts.apache.org/tags-html"%>
+
+<c:forEach items="${article.attachments}" var="att" >
+	<div style="border: 1px solid #5aa6ff; margin: 10px;">
+		文件名 ${att.fileName }
+		<html:img page="/images/icon_disk.gif" />
+		<html:link action="/attachment?method=download&id=${att.id }&topicId=${topic.id }&pageNum=${param.pageNum }">
+			Download</html:link>
+		<html:link action="/attachment?method=editUI&id=${att.id }&topicId=${topic.id }&pageNum=${param.pageNum }">修改</html:link>
+		<a href="javascript:delAttachment(${att.id }, '${att.fileName }')">删除</a>
+		<br>
+		文件大小 ${att.fileSize }字节
+		<br>
+		下载统计 ${att.downloadCount }次
+		<br>
+		描述 ${att.description }
+	</div>
+</c:forEach>
+<c:remove var="article" scope="page"/>
+
+<script type="text/javascript">
+	function delAttachment(id, fileName){
+		var url = '<html:rewrite action="/attachment?method=del&id="/>' + id + '&topicId=${topic.id }&pageNum=${param.pageNum }';
+		if(window.confirm("您确认要删除附件 【" + fileName + "】 吗")){
+			window.location.href = url;
+		}
+	}
+</script>
+

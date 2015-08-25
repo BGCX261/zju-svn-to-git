@@ -1,0 +1,18 @@
+
+<html>
+	<head>
+		<script type="text/javascript" src="xtree.js"></script>
+		<link rel="stylesheet" type="text/css" href="xtree.css">
+	</head>
+	<body>
+	<script type="text/javascript">
+		var tree = new WebFXTree('Root');
+		var item1 = tree.add(new WebFXTreeItem('总公司'));
+		var item3 = item1.add(new WebFXTreeItem('上海分公司'));
+		var item2 = item1.add(new WebFXTreeItem('北京分公司'));
+		var item5 = item2.add(new WebFXTreeItem('开发部'));
+		var item4 = item2.add(new WebFXTreeItem('财务部'));
+		document.write(tree);		
+		</script>
+	</body>
+</html>

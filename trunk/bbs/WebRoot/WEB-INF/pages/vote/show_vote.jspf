@@ -1,0 +1,50 @@
+<%@ page language="java" pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="html" uri="http://struts.apache.org/tags-html"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
+<c:forEach items="${topic.votes}" var="vote">
+	<div>
+		<html:form action="/vote" onsubmit="return validateUserVoteForm(this)">
+			<html:hidden property="method" value="vote" />
+			<html:hidden property="topicId" value="${topic.id}" />
+
+			<table class="list" style="width: 660px;">
+		        <tr>
+		            <td class="title2">
+		            	投票：<c:out value="${vote.title}"></c:out>
+						<html:link action="/vote?method=delVote&id=${vote.id }&topicId=${topic.id }"
+							onclick="return window.confirm('您确定要删除投票【${vote.title}】吗?')">删除此投票</html:link>
+		            </td>
+		        </tr>
+				<tr>
+		           <td><!-- 投票选项列表 -->
+		               <c:forEach items="${vote.voteItems }" var="item" varStatus="state">
+		                    <c:set var="percent" value="${(vote.result eq 0) ? 0 : item.result div vote.result}" scope="page"/>
+			                <div>
+			                    <span class="voteOptionSel">
+			                    	<c:if test="${vote.multiple}"><html:checkbox property="voteItemIds" value="${item.id}"/></c:if>
+									<c:if test="${not vote.multiple}"><html:radio property="voteItemIds" value="${item.id}"/></c:if>
+								</span>
+			                    <span class="voteOptionCont" title="${item.content }">
+			                    	${state.count }, <c:out value="${item.content }"/>
+			                    </span>
+			                    <span class="voteOptionPercent" style="width: ${percent * 200}px;"></span>
+			                    &nbsp;&nbsp;${item.result}票 （<fmt:formatNumber value="${percent * 100}" pattern=".00"/>%）
+			                </div>
+							<c:remove var="percent" scope="page"/>
+		                </c:forEach>
+		           </td>
+		        </tr>
+		        <tr>
+		            <td align="right">
+		                <html:submit>提交</html:submit>
+						此投票将于 <span class="title2"><fmt:formatDate value="${vote.closeTime}" pattern="yyyy年MM月dd日hh:mm"/></span> 关闭，
+						目前已有 <span class="title2">${vote.result}</span> 人参与
+		            </td>
+		        </tr>
+		    </table>
+
+		</html:form>
+	</div>
+</c:forEach>

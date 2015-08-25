@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+
+	<form-beans>
+		<form-bean name="categoryForm" type="cn.itcast.bbs.web.struts.forms.CategoryForm" />
+		<form-bean name="forumForm" type="cn.itcast.bbs.web.struts.forms.ForumForm" />
+		<form-bean name="roleForm" type="cn.itcast.bbs.web.struts.forms.RoleForm" />
+		<form-bean name="groupForm" type="cn.itcast.bbs.web.struts.forms.GroupForm" />
+		<form-bean name="userForm" type="cn.itcast.bbs.web.struts.forms.UserForm" />
+		<form-bean name="searchForm" type="cn.itcast.bbs.web.struts.forms.SearchForm" />
+		<form-bean name="settingsForm" type="cn.itcast.bbs.web.struts.forms.SettingsForm" />
+	</form-beans>
+
+	<action-mappings>
+
+		<!-- 后台管理首页与运行信息 -->
+		<action path="/admin/top" forward="/WEB-INF/pages/adminCenter/top.jsp"></action>
+		<action path="/admin/top2" forward="/WEB-INF/pages/adminCenter/top2.jsp"></action>
+		<action path="/admin/left" forward="/WEB-INF/pages/adminCenter/left.jsp"></action>
+		<action path="/admin/middle" forward="/WEB-INF/pages/adminCenter/middle.jsp"></action>
+		<action path="/admin/right" forward="/WEB-INF/pages/adminCenter/right.jsp"></action>
+		<action path="/admin" parameter="method">
+			<forward name="index" path="/WEB-INF/pages/adminCenter/index.jsp" />
+			<forward name="info" path="/WEB-INF/pages/adminCenter/info.jsp" />
+		</action>
+
+		<!-- 分类与版面管理  -->
+		<action path="/admin/category" parameter="method" name="categoryForm" scope="request"
+			validate="false">
+			<forward name="list" path="/WEB-INF/pages/category/list.jsp" />
+			<forward name="save" path="/WEB-INF/pages/category/save.jsp" />
+			<forward name="showCategories" path="/admin/category.do?method=list" redirect="true" />
+		</action>
+
+		<action path="/admin/forum" parameter="method" name="forumForm" scope="request" validate="false">
+			<forward name="save" path="/WEB-INF/pages/forum/save.jsp" />
+			<forward name="showCategories" path="/admin/category.do?method=list" redirect="true" />
+		</action>
+
+		<!-- 角色管理  -->
+		<action path="/admin/role" parameter="method" name="roleForm" scope="request" validate="false">
+			<forward name="list" path="/WEB-INF/pages/role/list.jsp" />
+			<forward name="save" path="/WEB-INF/pages/role/save.jsp" />
+			<forward name="showRoles" path="/admin/role.do?method=list" redirect="true" />
+		</action>
+		
+		<!-- 群组管理  -->
+		<action path="/admin/group" parameter="method" name="groupForm" scope="request" validate="false">
+			<forward name="list" path="/WEB-INF/pages/group/list.jsp" />
+			<forward name="save" path="/WEB-INF/pages/group/save.jsp" />
+			<forward name="showGroups" path="/admin/group.do?method=list" redirect="true" />
+			<forward name="permissionsForm" path="/WEB-INF/pages/group/permissions.jsp"></forward>
+		</action>
+
+		<!-- 会员管理 -->
+		<action path="/admin/user" parameter="method" name="userForm" scope="request" validate="false">
+			<forward name="list" path="/WEB-INF/pages/user/list.jsp" />
+			<forward name="changeGroups" path="/WEB-INF/pages/user/changeGroups.jsp"></forward>
+			<forward name="showUsers" path="/admin/user.do?method=list" redirect="true" />
+		</action>
+
+		<!-- 搜索管理 -->
+		<action path="/admin/search" parameter="method" name="searchForm" scope="request" validate="false">
+			<forward name="info" path="/WEB-INF/pages/search/info.jsp" />
+			<forward name="showInfo" path="/admin/search.do?method=info" redirect="true" />
+		</action>
+
+		<!-- 系统配置 -->
+		<action path="/admin/config" parameter="method" name="settingsForm" scope="request"
+			validate="false">
+			<forward name="edit" path="/WEB-INF/pages/config/edit.jsp" />
+			<forward name="showEditUI" path="/admin/config.do?method=editUI" redirect="true" />
+			<forward name="listFiles" path="/WEB-INF/pages/config/listFiles.jsp" />
+			<forward name="showFiles" path="/admin/config.do?method=listFiles" redirect="true"></forward>
+		</action>
+
+	</action-mappings>
+
+	<message-resources parameter="cn.itcast.bbs.web.struts.actions.admin.ApplicationResources"
+		key="RESOURCE_MANAGE" />
+
+</struts-config>

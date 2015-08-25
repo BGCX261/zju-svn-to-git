@@ -1,0 +1,189 @@
+body {
+    background: #ffffff; /*color: #353535;*/
+    color: #454545;
+    font-family: "Verdana", "Arial";
+    font-size: 12px;
+}
+
+form {
+    margin: 0px;
+    padding: 0px;
+}
+
+hr {
+    color: #52a2ff;
+    size: 1px;
+}
+
+a {
+    color: #58607A;
+}
+
+img {
+    border: 0px;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+fieldset {
+    margin: 0px;
+}
+
+iframe {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* ========================= */
+
+.index_cont {
+    width: 950px;
+    margin: 15px 25px;
+}
+
+.title {
+    background-color: #6f8ac4;
+    color: #fff;
+}
+
+.title2 {
+    color: #245ddb;
+    font-weight: bold;
+}
+
+.description {
+    color: #6f8ac4;
+    margin-left: 10px;
+    font-size: 12px;
+}
+
+.border_top {
+    border-top: 1px solid #c6d7ff;
+}
+
+.boder_none {
+    border: none;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+/* ========================= */
+
+table.list {
+    border-collapse: collapse;
+    border: 1px solid #c6d7ff;
+    width: 90%;
+}
+
+table.list th, table.list td {
+    padding: 5px;
+    font-family: tahoma;
+    font-size: 14px;
+    border: 1px solid #c6d7ff;
+}
+
+table.form {
+    border-collapse: collapse;
+    border: 1px solid #c6d7ff;
+    margin: 10px;
+}
+
+table.form th, table.form td {
+    padding: 5px;
+    font-family: tahoma;
+    font-size: 14px;
+}
+
+table.form .input1 {
+    width: 300px;
+}
+
+table.form td.red {
+    color: red;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+table.form .textarea1 {
+    width: 300px;
+    height: 80px;
+}
+
+/* ========================= */
+
+.cut {
+    width: 852px !important;
+    table-layout: fixed;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+    /*
+    WHITE-SPACE: nowrap;
+    TEXT-OVERFLOW: ellipsis
+    */
+}
+
+.cut2 {
+    width: 852px !important;
+    text-align: justify;
+    text-justify: inter-ideograph;
+    table-layout: fixed;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden
+}
+
+.cutTail {
+    overflow: hidden; /*width: 445px !important;*/
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.hidden {
+    display: none
+}
+
+/* 引用 */
+div.bbs_quote {
+    border: #666 1px dashed;
+    padding: 8px;
+    margin: 8px;
+    text-align: left;
+    background-color: #fff;
+    zoom: 1;
+}
+
+div.bbs_quote div.bbs_quote {
+    filter: alpha( opacity = 70 );
+    opacity: 0.7;
+}
+
+div.bbs_quote img {
+    position: relative;
+    vertical-align: baseline;
+}
+
+.quote {
+    border: #cecece 1px dashed;
+    padding: 8px;
+    margin: 8px;
+    text-align: left;
+    background-color: #f7f7f7;
+    zoom: 1;
+}
+
+.quote .quote {
+    filter: alpha( opacity = 70 );
+    opacity: 0.7;
+    background-color: mintcream;
+}
+
+.quote img {
+    position: relative;
+    vertical-align: baseline;
+}

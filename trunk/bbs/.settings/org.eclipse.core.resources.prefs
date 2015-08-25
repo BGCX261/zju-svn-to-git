@@ -1,0 +1,17 @@
+#Thu Jan 07 12:45:30 CST 2010
+eclipse.preferences.version=1
+encoding//WebRoot/script/admin/search.js=UTF-8
+encoding//WebRoot/script/commons/itcastbbs.js=utf-8
+encoding//WebRoot/script/commons/validateUtils.js=utf-8
+encoding//WebRoot/script/deprecated/admin_20090717/category_forum.js=UTF-8
+encoding//WebRoot/script/deprecated/admin_20090717/group.js=UTF-8
+encoding//WebRoot/script/deprecated/admin_20090717/role.js=utf-8
+encoding//WebRoot/script/front/user.js=UTF-8
+encoding//WebRoot/script/leftmenu/leftmenu.css=utf-8
+encoding//WebRoot/script/leftmenu/leftmenu.js=UTF-8
+encoding//WebRoot/style/itcastbbs.css=utf-8
+encoding//WebRoot/style/itcastbbs_header_footer.css=utf-8
+encoding//src/config/bbs/default.properties=UTF-8
+encoding//src/entities/cn/itcast/bbs/entities/PageInfo.java=UTF-8
+encoding/<project>=UTF-8
+instance/org.eclipse.core.net/org.eclipse.core.net.hasMigrated=true
